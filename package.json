@@ -1,0 +1,43 @@
+{
+  "name": "spursbase-foundation-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app components lib sanity.config.ts next.config.ts",
+    "studio": "sanity dev --config sanity.config.ts"
+  },
+  "dependencies": {
+    "@portabletext/react": "^5.0.0",
+    "@sanity/client": "^7.26.2",
+    "@sanity/image-url": "^1.1.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "entities": "^4.5.0",
+    "express": "^5.3.0",
+    "framer-motion": "^12.0.0",
+    "html-react-parser": "^5.2.10",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanitize-html": "^2.18.1",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/sanitize-html": "^2.16.2",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "sanity": "^6.19.0",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
+  }
+}

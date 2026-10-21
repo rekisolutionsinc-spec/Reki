@@ -1,0 +1,379 @@
+/* ============================================================
+   volunteer-register.css — Registration form page
+   ============================================================ */
+:root {
+  --vr-blue:   #2b2b88;
+  --vr-orange: #ff6633;
+  --vr-light:  #f5f6fa;
+  --vr-border: #e4e4ef;
+  --vr-text:   #1c1c2e;
+  --vr-muted:  #5a5a72;
+  --vr-green:  #1a9e5c;
+}
+
+/* PAGE HEADER */
+.vr-header {
+  background: var(--vr-blue);
+  padding: 28px 7%;
+}
+.vr-header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vr-back {
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color .2s;
+}
+.vr-back:hover { color: var(--vr-orange); }
+.vr-header h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.vr-header p { font-size: .95rem; color: rgba(255,255,255,.75); margin: 0; }
+
+/* PROGRESS BAR */
+.vr-progress-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--vr-border);
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.vr-progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+  flex-shrink: 0;
+}
+.vr-step-dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--vr-border);
+  background: #fff;
+  color: var(--vr-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem;
+  font-weight: 700;
+  transition: all .3s;
+}
+.vr-progress-step span {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--vr-muted);
+  white-space: nowrap;
+  transition: color .3s;
+}
+.vr-progress-step.active .vr-step-dot {
+  background: var(--vr-blue);
+  border-color: var(--vr-blue);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(43,43,136,.3);
+}
+.vr-progress-step.active span { color: var(--vr-blue); }
+.vr-progress-step.done .vr-step-dot {
+  background: var(--vr-green);
+  border-color: var(--vr-green);
+  color: #fff;
+}
+.vr-progress-line {
+  flex: 1;
+  height: 2px;
+  background: var(--vr-border);
+  margin: 0 8px;
+  margin-bottom: 22px;
+  min-width: 24px;
+  transition: background .3s;
+}
+.vr-progress-line.active { background: var(--vr-blue); }
+
+/* BODY */
+.vr-body { background: var(--vr-light); padding: 40px 7% 80px; }
+.vr-inner { max-width: 860px; margin: 0 auto; }
+
+/* STEP PANELS */
+.vr-step-panel { display: none; animation: vrFadeIn .35s ease; }
+.vr-step-panel.active { display: block; }
+@keyframes vrFadeIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+/* FORM CARD */
+.vr-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 36px 40px;
+  box-shadow: 0 2px 16px rgba(43,43,136,.07);
+  margin-bottom: 20px;
+}
+.vr-card-title {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vr-blue);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--vr-border);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vr-card-title i { color: var(--vr-orange); font-size: 1rem; }
+
+/* FIELDS */
+.vr-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.vr-field-row.full { grid-template-columns: 1fr; }
+.vr-field { display: flex; flex-direction: column; gap: 6px; }
+.vr-field label { font-size: .82rem; font-weight: 700; color: var(--vr-text); }
+.req { color: var(--vr-orange); margin-left: 2px; }
+.vr-field input,
+.vr-field select,
+.vr-field textarea {
+  border: 1.5px solid var(--vr-border);
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-size: .95rem;
+  color: var(--vr-text);
+  background: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+.vr-field input:focus,
+.vr-field select:focus,
+.vr-field textarea:focus {
+  border-color: var(--vr-blue);
+  box-shadow: 0 0 0 3px rgba(43,43,136,.08);
+}
+.vr-field input.vr-error,
+.vr-field select.vr-error,
+.vr-field textarea.vr-error {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229,57,53,.1);
+}
+.vr-field textarea { resize: vertical; min-height: 90px; }
+.vr-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5a72' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+/* RADIO */
+.vr-radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.vr-radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .92rem;
+  color: var(--vr-muted);
+  cursor: pointer;
+}
+.vr-radio-item input[type="radio"],
+.vr-radio-item input[type="checkbox"] {
+  width: 18px; height: 18px;
+  accent-color: var(--vr-blue);
+  flex-shrink: 0;
+}
+
+/* TERMS */
+.vr-terms-heading { font-size: 1rem; font-weight: 700; color: var(--vr-text); margin: 0 0 8px; }
+.vr-terms-text { font-size: .9rem; color: var(--vr-muted); line-height: 1.75; margin-bottom: 14px; }
+
+/* NAVIGATION */
+.vr-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+.vr-btn-next {
+  background: var(--vr-blue);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 13px 32px;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background .2s, transform .2s;
+}
+.vr-btn-next:hover { background: #1f1f6e; transform: translateX(3px); }
+.vr-btn-back {
+  background: none;
+  color: var(--vr-muted);
+  border: 1.5px solid var(--vr-border);
+  border-radius: 4px;
+  padding: 13px 24px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .2s;
+}
+.vr-btn-back:hover { border-color: var(--vr-blue); color: var(--vr-blue); }
+.vr-btn-submit {
+  background: var(--vr-orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 36px;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .2s, box-shadow .2s;
+  box-shadow: 0 4px 14px rgba(255,102,51,.35);
+}
+.vr-btn-submit:hover { background: #e05520; box-shadow: 0 6px 20px rgba(255,102,51,.45); }
+.vr-btn-submit:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
+
+/* PAYMENT */
+.vr-payment-box { }
+.vr-payment-note { font-size: .92rem; color: var(--vr-muted); line-height: 1.75; }
+.vr-payment-optional { margin-top: 20px; }
+.vr-opt-label { font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--vr-blue); margin-bottom: 14px; }
+.vr-donation-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+.vr-donation-btn {
+  border: 2px solid var(--vr-border);
+  background: #fff;
+  color: var(--vr-text);
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-size: .92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+}
+.vr-donation-btn:hover { border-color: var(--vr-blue); color: var(--vr-blue); }
+.vr-donation-btn.selected { background: var(--vr-blue); color: #fff; border-color: var(--vr-blue); }
+.vr-donation-btn.vr-skip { color: var(--vr-muted); font-weight: 500; border-style: dashed; }
+
+.vr-intl-fee-banner {
+  background: linear-gradient(135deg, var(--vr-blue) 0%, #3d3db0 100%);
+  border-radius: 8px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.vr-fee-amount { font-size: 3rem; font-weight: 800; color: #fff; line-height: 1; }
+.vr-fee-label { font-size: .82rem; color: rgba(255,255,255,.7); margin-top: 4px; }
+.vr-fee-includes { display: flex; flex-direction: column; gap: 8px; }
+.vr-fee-item { font-size: .88rem; color: rgba(255,255,255,.9); display: flex; align-items: center; gap: 10px; }
+.vr-fee-item i { color: var(--vr-orange); }
+.vr-payment-logos { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 1.8rem; color: var(--vr-muted); }
+
+/* SUCCESS */
+.vr-success-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 56px 48px;
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(43,43,136,.08);
+}
+.vr-success-icon {
+  width: 72px; height: 72px;
+  background: var(--vr-green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 1.8rem;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(26,158,92,.3);
+}
+.vr-success-box h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--vr-text);
+  margin-bottom: 14px;
+}
+.vr-success-box > p {
+  font-size: 1.02rem;
+  color: var(--vr-muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+.vr-success-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.vr-success-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--vr-light);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+.vr-ss-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--vr-blue);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: .88rem;
+  flex-shrink: 0;
+}
+.vr-success-step strong { display: block; font-size: .95rem; color: var(--vr-text); margin-bottom: 4px; }
+.vr-success-step p { font-size: .88rem; color: var(--vr-muted); line-height: 1.6; margin: 0; }
+.vr-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--vr-orange);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .5px;
+  transition: background .2s;
+}
+.vr-home-btn:hover { background: #e05520; }
+
+@media (max-width: 700px) {
+  .vr-card { padding: 24px 18px; }
+  .vr-field-row { grid-template-columns: 1fr; }
+  .vr-intl-fee-banner { flex-direction: column; gap: 20px; }
+  .vr-success-box { padding: 36px 20px; }
+  .vr-progress-bar { gap: 0; padding: 16px 4%; }
+  .vr-progress-step span { display: none; }
+  .vr-progress-line { min-width: 16px; }
+}

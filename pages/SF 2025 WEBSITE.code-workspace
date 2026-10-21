@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../SF WEB/Final"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SF 2025 WEBSITE"
+	}
+}

@@ -1,0 +1,111 @@
+/* ================================================================
+   HOW TO LINK CSS ON EACH PAGE
+   Replace your single <link rel="stylesheet" href="style.css" />
+   with the links shown below for each page.
+   All files live in your css/ folder.
+   ================================================================
+
+
+   ── EVERY PAGE needs these 3 (base + header + footer) ──────────
+
+   <link rel="stylesheet" href="css/base.css" />
+   <link rel="stylesheet" href="css/header.css" />
+   <link rel="stylesheet" href="css/footer.css" />
+
+
+   ── THEN add the page-specific file below ──────────────────────
+
+
+   index.html (Home)
+   └── <link rel="stylesheet" href="css/home.css" />
+
+   about.html
+   └── <link rel="stylesheet" href="css/about.css" />
+
+   impact.html
+   └── <link rel="stylesheet" href="css/impact.css" />
+
+   blog.html  /  blog-single.html
+   └── <link rel="stylesheet" href="css/blog.css" />
+
+   get-involved.html
+   └── <link rel="stylesheet" href="css/get-involved.css" />
+
+   contact.html
+   └── <link rel="stylesheet" href="css/contact.css" />
+
+   sponsor.html
+   └── <link rel="stylesheet" href="css/sponsor.css" />
+
+   founder.html
+   └── <link rel="stylesheet" href="css/founder.css" />
+
+   board.html
+   └── <link rel="stylesheet" href="css/board.css" />
+
+   who-we-are.html  /  mission.html  /  vision.html
+   └── <link rel="stylesheet" href="css/who-we-are.css" />
+
+   sdg.html
+   └── <link rel="stylesheet" href="css/sdg.css" />
+
+   chosen.html
+   └── <link rel="stylesheet" href="css/chosen.css" />
+
+   privacy.html
+   └── <link rel="stylesheet" href="css/privacy.css" />
+
+   events.html  /  register.html
+   └── <link rel="stylesheet" href="css/events.css" />
+
+   reports.html
+   └── <link rel="stylesheet" href="css/reports.css" />
+
+   programs.html
+   └── <link rel="stylesheet" href="css/programs.css" />
+
+
+   ── EXAMPLE: what programs.html <head> looks like ───────────────
+
+   <head>
+     <link rel="stylesheet" href="css/base.css" />
+     <link rel="stylesheet" href="css/header.css" />
+     <link rel="stylesheet" href="css/footer.css" />
+     <link rel="stylesheet" href="css/programs.css" />
+   </head>
+
+
+   ── FOLDER STRUCTURE ────────────────────────────────────────────
+
+   your-project/
+   ├── index.html
+   ├── about.html
+   ├── programs.html
+   ├── ... (all your html files)
+   │
+   ├── css/
+   │   ├── base.css           ← Reset + .container  (21 lines)
+   │   ├── header.css         ← Header + nav        (216 lines)
+   │   ├── footer.css         ← Footer              (131 lines)
+   │   ├── home.css           ← Home page           (629 lines)
+   │   ├── about.css          ← About page          (143 lines)
+   │   ├── impact.css         ← Impact page         (285 lines)
+   │   ├── blog.css           ← Blog page           (206 lines)
+   │   ├── get-involved.css   ← Get Involved        (117 lines)
+   │   ├── contact.css        ← Contact page        (136 lines)
+   │   ├── sponsor.css        ← Sponsor page        (460 lines)
+   │   ├── founder.css        ← Founder message     (141 lines)
+   │   ├── board.css          ← Board section       (200 lines)
+   │   ├── who-we-are.css     ← Who We Are          (299 lines)
+   │   ├── sdg.css            ← SDG Wheel           (172 lines)
+   │   ├── chosen.css         ← Chosen page         (176 lines)
+   │   ├── privacy.css        ← Privacy Policy      (144 lines)
+   │   ├── events.css         ← Events pages        (575 lines)
+   │   ├── reports.css        ← Reports page        (178 lines)
+   │   └── programs.css       ← Programs page       (286 lines)
+   │
+   ├── js/
+   │   └── main.js
+   └── images/
+
+   ================================================================ */

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Development  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/community.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Favicon -->
+        <link href="/img/favicon.png" rel="icon">
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<div class="cd-hero">
+  <img src="/img/DSC09605.jpg" alt="Community Development" />
+</div>
+<div class="cd-hero-caption">
+  <i class="fas fa-quote-left"></i>
+  <p>"When we strengthen families, we strengthen the communities that shape every child's future."</p>
+</div>
+
+<div class="cd-body">
+  <aside class="cd-sidebar">
+    <a href="programs.html" class="cd-back"><i class="fas fa-arrow-left"></i> All Programs</a>
+    <div class="cd-acc-header" onclick="this.classList.toggle('collapsed')">
+      About The Programme <i class="fas fa-chevron-down chevron"></i>
+    </div>
+    <div class="cd-nav">
+      <div class="cd-nav-item active" onclick="cdShow('pane-overview');cdNavActive(this)">Overview <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="cd-nav-item" onclick="cdShow('pane-challenge');cdNavActive(this)">Challenge <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="cd-nav-item" onclick="cdShow('pane-projects');cdNavActive(this)">Projects <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="cd-nav-item" onclick="cdShow('pane-impact');cdNavActive(this)">Impact <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="cd-nav-item" onclick="cdShow('pane-approach');cdNavActive(this)">Our Approach <i class="fas fa-chevron-right arrow"></i></div>
+      <a class="cd-nav-donate" href="https://paystack.shop/pay/oh2bqa2xdw">Donate</a>
+    </div>
+  </aside>
+
+  <main class="cd-content">
+    <div class="cd-pane active" id="pane-overview">
+      <div class="cd-quote">
+        <div class="cd-quotemark">"</div>
+        <blockquote>"Education does not begin at the school gate, it begins at home. Empowered parents raise empowered children."</blockquote>
+        <cite>Spursbase Foundation</cite>
+      </div>
+      <h2>Our Objective</h2>
+      <p>Many communities in underserved areas find it difficult to understand how to effectively support their children's development. Spursbase Foundation believes that training parents and caregivers to play an active role in their children's growth is fundamental to breaking cycles of poverty and ensuring children remain in school.</p>
+      <p>Our Community Development Programme works directly with families, equipping parents, guardians, and caregivers with the skills, knowledge, and financial tools to create stable environments where education remains a priority.</p>
+      <div class="cd-pills">
+        <div class="cd-pill"><i class="fas fa-home"></i> Family Empowerment</div>
+        <div class="cd-pill"><i class="fas fa-piggy-bank"></i> Financial Literacy</div>
+        <div class="cd-pill"><i class="fas fa-users"></i> Parent Engagement</div>
+        <div class="cd-pill"><i class="fas fa-child"></i> Child Welfare</div>
+        <div class="cd-pill"><i class="fas fa-tshirt"></i> Clothing & Dignity</div>
+        <div class="cd-pill"><i class="fas fa-hands-helping"></i> Community Networks</div>
+      </div>
+    </div>
+
+    <div class="cd-pane" id="pane-challenge">
+      <h2>The Challenge</h2>
+      <p>For many families in rural Ghana, keeping a child in school is not a question of values but of affordability. Financial pressure at the household level often forces children out of school, reinforcing cycles of poverty and limiting opportunity for generations.</p>
+      <div class="cd-callout">
+        <h4>Poverty as a Barrier</h4>
+        <p>Many families in marginalised communities lack the financial stability to cover basic education costs, uniforms, shoes, exercise books, leading children to miss school or drop out entirely not because they lack ambition but because circumstances leave no other option.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Young Parents</h4>
+        <p>In the communities we serve, some children become parents while still in school. Without support, many young mothers are forced to drop out entirely. Empowering caregivers, including young parents, helps keep education within reach for both parent and child.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Clothing Poverty</h4>
+        <p>Many children attend school in distress or miss classes entirely due to insufficient clothing, worn-out footwear, or the absence of suitable items for daily living. Education does not begin at the school gate, it begins with dignity at home.</p>
+      </div>
+    </div>
+
+    <div class="cd-pane" id="pane-projects">
+      <h2>Projects</h2>
+      <p>Our Community Development projects work directly alongside families and communities to create the stable foundations every child needs to learn and grow.</p>
+      <div class="cd-proj-grid">
+        <div class="cd-proj-card">
+          <div class="cd-proj-card-img"><img src="/img/IMG_0170.jpg" alt="Saving The Future" /></div>
+          <div class="cd-proj-card-body">
+            <h3>Saving The Future</h3>
+            <p>Working with parents and caregivers, providing guidance and targeted financial support to help meet essential education-related costs, keeping children consistently enrolled and attending school.</p>
+            <span class="cd-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="cd-proj-card">
+          <div class="cd-proj-card-img"><img src="/img/DSC00380.jpg" alt="Nunana Project" /></div>
+          <div class="cd-proj-card-body">
+            <h3>Nunana Project</h3>
+            <p>Delivering home clothing, school-appropriate footwear, and essential wear to vulnerable children and families, restoring dignity at home so children show up to school ready and confident to learn.</p>
+            <span class="cd-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="cd-proj-card">
+          <div class="cd-proj-card-img"><img src="/img/DSC04221.jpg" alt="Christmas of Hope" /></div>
+          <div class="cd-proj-card-body">
+            <h3>Christmas of Hope</h3>
+            <p>Creating joyful, inclusive celebration spaces for vulnerable children, combining storytelling, creative art, shared meals, and clothing distributions to nurture emotional wellbeing and a sense of belonging.</p>
+            <span class="cd-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cd-pane" id="pane-impact">
+      <h2>Our Impact</h2>
+      <div class="cd-callout">
+        <h4>500+ Students & Families</h4>
+        <p>Supported through the Nunana Project with home wear, school shoes, and essential clothing across the Volta, North East, and Central Regions, reducing absenteeism linked to lack of clothing.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>157 Children</h4>
+        <p>Participated in the Christmas of Hope celebration at Mafi Seva, experiencing joy, nutritious meals, storytelling, creative activities, and clothing distributions in a safe, festive environment.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Improved School Retention</h4>
+        <p>Through the Saving the Future programme, children supported by family empowerment initiatives show significantly improved school attendance and retention rates, with parents more actively involved in education decisions.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Strengthened Community Trust</h4>
+        <p>Our community-first approach has deepened relationships with local families, volunteers, and community leaders, building a network of care that extends well beyond individual programme activities.</p>
+      </div>
+    </div>
+
+    <div class="cd-pane" id="pane-approach">
+      <h2>Our Approach</h2>
+      <p>We believe sustainable change comes from within communities. Our Community Development Programme works alongside families rather than for them, building local ownership and ensuring every intervention creates lasting roots.</p>
+      <div class="cd-callout">
+        <h4>Parent-Centred Programming</h4>
+        <p>We engage parents and caregivers directly, recognising that a child's success at school depends as much on what happens at home as what happens in the classroom.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Dignity-First Distribution</h4>
+        <p>Every clothing and resource distribution is carried out with respect and care, ensuring beneficiaries feel seen, valued, and supported rather than stigmatised.</p>
+      </div>
+      <div class="cd-callout">
+        <h4>Long-Term Family Empowerment</h4>
+        <p>Through the Miatia Project and Saving the Future, we help families build financial stability over time, moving beyond one-off support toward sustainable livelihoods that keep children in school for the long term.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section class="cd-news">
+  <div class="cd-news-inner">
+    <div class="cd-news-label">Latest from Community Development</div>
+    <div class="cd-news-grid">
+      <div class="cd-news-card">
+        <img src="/img/IMG_0170.jpg" alt="" />
+        <div class="cd-news-card-body">
+          <div class="cd-news-date">December 20, 2025</div>
+          <h3>Christmas of Hope Brings Joy to 157 Children at Mafi Seva</h3>
+        </div>
+      </div>
+      <div class="cd-news-card">
+        <img src="/img/DSC00380.jpg" alt="" />
+        <div class="cd-news-card-body">
+          <div class="cd-news-date">April 17, 2025</div>
+          <h3>Lost in a Glazed World, Art Event Supports Nunana Clothing Project</h3>
+        </div>
+      </div>
+      <div class="cd-news-card">
+        <img src="/img/DSC09605.jpg" alt="" />
+        <div class="cd-news-card-body">
+          <div class="cd-news-date">March 2025</div>
+          <h3>When Children Are Clothed With Dignity at Home, They Show Up Ready to Learn</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<my-footer></my-footer>
+<script>
+  function cdShow(id){document.querySelectorAll('.cd-pane').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+  function cdNavActive(el){document.querySelectorAll('.cd-nav-item').forEach(n=>n.classList.remove('active'));el.classList.add('active');}
+</script>
+</body>
+</html>

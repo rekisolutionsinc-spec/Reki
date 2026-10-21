@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer Registration  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+   <link rel="stylesheet" href="/css/css/header.css" />
+   <link rel="stylesheet" href="/css/css/footer.css" />
+   <link rel="stylesheet" href="/css/css/volunteer-register.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <!-- Favicon -->
+    <link href="/img/favicon.png" rel="icon">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- PAGE HEADER -->
+<div class="vr-header">
+  <div class="vr-header-inner">
+    <a href="volunteer.html" class="vr-back"><i class="fas fa-arrow-left"></i> Back to Volunteer</a>
+    <div>
+      <h1>Volunteer Registration</h1>
+      <p>Complete the form below to apply as a Spursbase Foundation volunteer.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="vr-progress-bar">
+  <div class="vr-progress-step active" data-step="1">
+    <div class="vr-step-dot">1</div><span>Personal Info</span>
+  </div>
+  <div class="vr-progress-line"></div>
+  <div class="vr-progress-step" data-step="2">
+    <div class="vr-step-dot">2</div><span>Contact & Availability</span>
+  </div>
+  <div class="vr-progress-line"></div>
+  <div class="vr-progress-step" data-step="3">
+    <div class="vr-step-dot">3</div><span>Skills & Motivation</span>
+  </div>
+  <div class="vr-progress-line"></div>
+  <div class="vr-progress-step" data-step="4">
+    <div class="vr-step-dot">4</div><span>Payment</span>
+  </div>
+  <div class="vr-progress-line"></div>
+  <div class="vr-progress-step" data-step="5">
+    <div class="vr-step-dot"><i class="fas fa-check"></i></div><span>Done</span>
+  </div>
+</div>
+
+<section class="vr-body">
+  <div class="vr-inner">
+
+    <!-- STEP 1: PERSONAL INFO -->
+    <div class="vr-step-panel active" id="step-1">
+      <div class="vr-card">
+        <div class="vr-card-title"><i class="fas fa-user"></i> Personal Information</div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" placeholder="First Name" required />
+          </div>
+          <div class="vr-field">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" placeholder="Last Name" required />
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Date of Birth <span class="req">*</span></label>
+            <input type="date" id="dob" required />
+          </div>
+          <div class="vr-field">
+            <label>Gender <span class="req">*</span></label>
+            <select id="gender" required>
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Nationality <span class="req">*</span></label>
+            <input type="text" id="nationality" placeholder="Nationality" required />
+          </div>
+          <div class="vr-field">
+            <label>Volunteer Type <span class="req">*</span></label>
+            <select id="volunteerType" required onchange="togglePayment(this.value)">
+              <option value="">Select Type</option>
+              <option value="local">Local Volunteer (Ghana)</option>
+              <option value="international">International Volunteer</option>
+            </select>
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Occupation</label>
+            <input type="text" id="occupation" placeholder="Occupation / Profession" />
+          </div>
+          <div class="vr-field">
+            <label>School or Employer</label>
+            <input type="text" id="employer" placeholder="Name of School or Employer" />
+          </div>
+        </div>
+      </div>
+      <div class="vr-nav-row">
+        <span></span>
+        <button class="vr-btn-next" onclick="goStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 2: CONTACT & AVAILABILITY -->
+    <div class="vr-step-panel" id="step-2">
+      <div class="vr-card">
+        <div class="vr-card-title"><i class="fas fa-address-card"></i> Contact Information</div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="email@example.com" required />
+          </div>
+          <div class="vr-field">
+            <label>Mobile / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="phone" placeholder="+233 XX XXX XXXX" required />
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>City <span class="req">*</span></label>
+            <input type="text" id="city" placeholder="City" required />
+          </div>
+          <div class="vr-field">
+            <label>Country <span class="req">*</span></label>
+            <select id="country" required>
+              <option value="">Select Country</option>
+              <option>Ghana</option><option>Nigeria</option><option>United Kingdom</option>
+              <option>United States</option><option>Germany</option><option>Netherlands</option>
+              <option>Canada</option><option>France</option><option>Italy</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Availability <span class="req">*</span></label>
+            <select id="availability" required>
+              <option value="">Select Duration</option>
+              <option>4 Weeks</option><option>1 to 3 Months</option>
+              <option>3 to 6 Months</option><option>6 to 12 Months</option>
+            </select>
+          </div>
+          <div class="vr-field">
+            <label>Volunteer Mode <span class="req">*</span></label>
+            <select id="mode" required>
+              <option value="">Select Mode</option>
+              <option>On-Site (Ghana)</option>
+              <option>Remote</option>
+              <option>Both</option>
+            </select>
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Preferred Language</label>
+            <select id="language">
+              <option value="">Select Language</option>
+              <option>English</option><option>French</option>
+              <option>Arabic</option><option>Twi</option><option>Ewe</option><option>Other</option>
+            </select>
+          </div>
+          <div class="vr-field">
+            <label>Area of Interest <span class="req">*</span></label>
+            <select id="interest" required>
+              <option value="">Select Area</option>
+              <option>Education Outreach</option>
+              <option>Health & Wellbeing</option>
+              <option>Community Events</option>
+              <option>Digital & Media Support</option>
+              <option>Skills & Training (Elevate Hub)</option>
+              <option>Advocacy & Awareness</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="vr-card" style="margin-top:20px">
+        <div class="vr-card-title"><i class="fas fa-phone-alt"></i> Emergency Contact</div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Contact Person <span class="req">*</span></label>
+            <input type="text" id="emergencyName" placeholder="Full Name" required />
+          </div>
+          <div class="vr-field">
+            <label>Relationship</label>
+            <input type="text" id="emergencyRel" placeholder="e.g. Parent, Sibling" />
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>Emergency Phone <span class="req">*</span></label>
+            <input type="tel" id="emergencyPhone" placeholder="+233 XX XXX XXXX" required />
+          </div>
+          <div class="vr-field">
+            <label>Alternate Phone</label>
+            <input type="tel" id="emergencyAlt" placeholder="+233 XX XXX XXXX" />
+          </div>
+        </div>
+      </div>
+      <div class="vr-nav-row">
+        <button class="vr-btn-back" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="vr-btn-next" onclick="goStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: SKILLS & MOTIVATION -->
+    <div class="vr-step-panel" id="step-3">
+      <div class="vr-card">
+        <div class="vr-card-title"><i class="fas fa-star"></i> Skills & Motivation</div>
+        <div class="vr-field-row full">
+          <div class="vr-field">
+            <label>Have you volunteered before? <span class="req">*</span></label>
+            <div class="vr-radio-group">
+              <label class="vr-radio-item">
+                <input type="radio" name="prevVol" value="No" onchange="document.getElementById('prevDetails').style.display='none'" /> No
+              </label>
+              <label class="vr-radio-item">
+                <input type="radio" name="prevVol" value="Yes" onchange="document.getElementById('prevDetails').style.display='block'" /> Yes, please provide details
+              </label>
+            </div>
+            <div id="prevDetails" style="display:none; margin-top:14px">
+              <div class="vr-field">
+                <label>Previous Experience</label>
+                <textarea id="prevExp" placeholder="Briefly describe your previous volunteer experience..."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vr-field-row full" style="margin-top:16px">
+          <div class="vr-field">
+            <label>Why do you want to volunteer with Spursbase Foundation? <span class="req">*</span></label>
+            <textarea id="motivation" placeholder="Tell us your motivation and what you hope to contribute..." style="min-height:120px" required></textarea>
+          </div>
+        </div>
+        <div class="vr-field-row full">
+          <div class="vr-field">
+            <label>Skills you bring</label>
+            <textarea id="skills" placeholder="List any relevant skills, qualifications, or experience areas..."></textarea>
+          </div>
+        </div>
+        <div class="vr-field-row">
+          <div class="vr-field">
+            <label>How did you hear about us?</label>
+            <select id="source">
+              <option value="">Select</option>
+              <option>Social Media</option><option>Friend or Family</option>
+              <option>Website</option><option>Event or Programme</option>
+              <option>News / Media</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <!-- TERMS -->
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid #e4e4ef;">
+          <div class="vr-terms-heading">Photo & Media Release</div>
+          <p class="vr-terms-text">During volunteer activities, Spursbase Foundation may photograph and record volunteers for use in publications, social media, and reports.</p>
+          <div class="vr-radio-group">
+            <label class="vr-radio-item"><input type="radio" name="photoConsent" id="photoYes" value="Yes" /> I consent to the use of my image</label>
+            <label class="vr-radio-item"><input type="radio" name="photoConsent" id="photoNo" value="No" /> I do not consent</label>
+          </div>
+          <div class="vr-terms-heading" style="margin-top:20px">Application Agreement</div>
+          <p class="vr-terms-text">By submitting, I confirm all information is true and correct, and I agree to abide by Spursbase Foundation's policies and code of conduct.</p>
+          <label class="vr-radio-item">
+            <input type="checkbox" id="agreeTerms" required /> I accept the terms and conditions <span class="req">*</span>
+          </label>
+        </div>
+      </div>
+      <div class="vr-nav-row">
+        <button class="vr-btn-back" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="vr-btn-next" onclick="goStep(4)">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 4: PAYMENT -->
+    <div class="vr-step-panel" id="step-4">
+      <div id="payment-local" class="vr-card vr-payment-box" style="display:none">
+        <div class="vr-card-title"><i class="fas fa-hand-holding-heart"></i> Support Our Work</div>
+        <p class="vr-payment-note">As a local volunteer, your contribution is your time and energy. However, if you'd like to make an optional donation to support Spursbase Foundation's programmes, we'd be grateful.</p>
+        <div class="vr-payment-optional">
+          <div class="vr-opt-label">Optional Donation</div>
+          <div class="vr-donation-grid">
+            <button class="vr-donation-btn" onclick="selectDonation(this, 50)">GHS 50</button>
+            <button class="vr-donation-btn" onclick="selectDonation(this, 100)">GHS 100</button>
+            <button class="vr-donation-btn" onclick="selectDonation(this, 200)">GHS 200</button>
+            <button class="vr-donation-btn vr-skip" onclick="skipPayment()">Skip for now</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="payment-international" class="vr-card vr-payment-box" style="display:none">
+        <div class="vr-card-title"><i class="fas fa-globe"></i> Volunteer Contribution, International</div>
+        <div class="vr-intl-fee-banner">
+          <div>
+            <div class="vr-fee-amount">€300</div>
+            <div class="vr-fee-label">One-time volunteer contribution</div>
+          </div>
+          <div class="vr-fee-includes">
+            <div class="vr-fee-item"><i class="fas fa-check"></i> Programme coordination & logistics</div>
+            <div class="vr-fee-item"><i class="fas fa-check"></i> Orientation & onboarding</div>
+            <div class="vr-fee-item"><i class="fas fa-check"></i> Volunteer training materials</div>
+            <div class="vr-fee-item"><i class="fas fa-check"></i> Certificate of participation</div>
+          </div>
+        </div>
+        <p class="vr-payment-note" style="margin-top:16px">Payment is processed securely via Paystack. You will be redirected to complete payment after submitting your form.</p>
+        <div class="vr-payment-logos">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <span style="font-size:.8rem; color:#5a5a72; margin-left:8px">Secure payment by Paystack</span>
+        </div>
+      </div>
+
+      <div id="payment-default" class="vr-card" style="text-align:center; padding:48px;">
+        <i class="fas fa-arrow-up" style="font-size:2rem; color:#e4e4ef; margin-bottom:16px; display:block;"></i>
+        <p style="color:#5a5a72;">Please select your volunteer type in Step 1 to see payment options.</p>
+        <button class="vr-btn-back" onclick="goStep(1)" style="margin-top:16px"><i class="fas fa-arrow-left"></i> Go Back to Step 1</button>
+      </div>
+
+      <div class="vr-nav-row">
+        <button class="vr-btn-back" onclick="goStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="vr-btn-submit" id="submitBtn" onclick="submitForm()">
+          <i class="fas fa-paper-plane"></i> Submit Application
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 5: SUCCESS -->
+    <div class="vr-step-panel" id="step-5">
+      <div class="vr-success-box">
+        <div class="vr-success-icon"><i class="fas fa-check"></i></div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying to volunteer with Spursbase Foundation. We have received your application and you will receive a <strong>confirmation email</strong> shortly with your next steps, including details on your <strong>orientation and onboarding</strong>.</p>
+        <div class="vr-success-steps">
+          <div class="vr-success-step">
+            <div class="vr-ss-num">1</div>
+            <div>
+              <strong>Check Your Email</strong>
+              <p>A confirmation email is on its way with your application reference and next steps.</p>
+            </div>
+          </div>
+          <div class="vr-success-step">
+            <div class="vr-ss-num">2</div>
+            <div>
+              <strong>Orientation</strong>
+              <p>Our team will reach out within 5 working days to schedule your orientation session.</p>
+            </div>
+          </div>
+          <div class="vr-success-step">
+            <div class="vr-ss-num">3</div>
+            <div>
+              <strong>Onboarding</strong>
+              <p>You'll be matched with a programme coordinator and receive your full onboarding pack before you begin.</p>
+            </div>
+          </div>
+        </div>
+        <a href="index.html" class="vr-home-btn">Return to Home <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<my-footer></my-footer>
+
+<script>
+// ─── GOOGLE APPS SCRIPT URL ─────────────────────────────────────────────────
+// REPLACE this URL with your Google Apps Script Web App URL after setup
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzZcn8x0iYIV-xxIaT9pvVNfcxAzYWKcrqgRzTnoBqMo_FYipXpUbuWhF9OfLnanYigpg/exec';
+
+// ─── PAYSTACK CONFIG ─────────────────────────────────────────────────────────
+// REPLACE with your Paystack public key
+const PAYSTACK_PUBLIC_KEY = 'pk_live_7d657719203b1deb733fd76deeb612de0704513f';
+
+let currentStep = 1;
+let selectedDonation = 0;
+
+function goStep(n) {
+  if (n > currentStep && !validateStep(currentStep)) return;
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  document.querySelectorAll('.vr-progress-step').forEach((s, i) => {
+    s.classList.toggle('active', i < n);
+    s.classList.toggle('done', i < n - 1);
+  });
+  document.querySelectorAll('.vr-progress-line').forEach((l, i) => {
+    l.classList.toggle('active', i < n - 1);
+  });
+  currentStep = n;
+  document.getElementById('step-' + n).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Show correct payment panel
+  if (n === 4) {
+    const t = document.getElementById('volunteerType').value;
+    document.getElementById('payment-local').style.display = t === 'local' ? 'block' : 'none';
+    document.getElementById('payment-international').style.display = t === 'international' ? 'block' : 'none';
+    document.getElementById('payment-default').style.display = (!t) ? 'block' : 'none';
+  }
+}
+
+function validateStep(n) {
+  const required = document.querySelectorAll('#step-' + n + ' [required]');
+  let ok = true;
+  required.forEach(el => {
+    el.classList.remove('vr-error');
+    if (!el.value || (el.type === 'checkbox' && !el.checked)) {
+      el.classList.add('vr-error');
+      ok = false;
+    }
+  });
+  if (!ok) alert('Please fill in all required fields before continuing.');
+  return ok;
+}
+
+function togglePayment(val) {
+  // Preview in step 4 if already there
+  if (currentStep === 4) {
+    document.getElementById('payment-local').style.display = val === 'local' ? 'block' : 'none';
+    document.getElementById('payment-international').style.display = val === 'international' ? 'block' : 'none';
+    document.getElementById('payment-default').style.display = (!val) ? 'block' : 'none';
+  }
+}
+
+function selectDonation(btn, amount) {
+  document.querySelectorAll('.vr-donation-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedDonation = amount;
+}
+
+function skipPayment() {
+  selectedDonation = 0;
+  submitForm();
+}
+
+function collectFormData() {
+  const prevVolRadio = document.querySelector('input[name="prevVol"]:checked');
+  const photoRadio = document.querySelector('input[name="photoConsent"]:checked');
+  return {
+    timestamp: new Date().toISOString(),
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    dob: document.getElementById('dob').value,
+    gender: document.getElementById('gender').value,
+    nationality: document.getElementById('nationality').value,
+    volunteerType: document.getElementById('volunteerType').value,
+    occupation: document.getElementById('occupation').value,
+    employer: document.getElementById('employer').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    city: document.getElementById('city').value,
+    country: document.getElementById('country').value,
+    availability: document.getElementById('availability').value,
+    mode: document.getElementById('mode').value,
+    language: document.getElementById('language').value,
+    interest: document.getElementById('interest').value,
+    emergencyName: document.getElementById('emergencyName').value,
+    emergencyRel: document.getElementById('emergencyRel').value,
+    emergencyPhone: document.getElementById('emergencyPhone').value,
+    emergencyAlt: document.getElementById('emergencyAlt').value,
+    previousVolunteer: prevVolRadio ? prevVolRadio.value : '',
+    previousExperience: document.getElementById('prevExp').value,
+    motivation: document.getElementById('motivation').value,
+    skills: document.getElementById('skills').value,
+    source: document.getElementById('source').value,
+    photoConsent: photoRadio ? photoRadio.value : '',
+    donation: selectedDonation
+  };
+}
+
+async function sendToSheet(data) {
+  try {
+    const response = await fetch(SHEET_URL, {
+      method:   'POST',
+      body:     JSON.stringify(data),
+      redirect: 'follow'
+    });
+    const result = await response.json();
+    console.log('Sheet result:', result);
+    return result;
+  } catch(e) {
+    console.error('Sheet error:', e);
+  }
+}
+
+function submitForm() {
+  if (!validateStep(3)) { goStep(3); return; }
+  const data = collectFormData();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+  const type = document.getElementById('volunteerType').value;
+
+  if (type === 'international') {
+    // Paystack payment first, then save to sheet
+    const handler = PaystackPop.setup({
+      key: PAYSTACK_PUBLIC_KEY,
+      email: data.email,
+      amount: 300 * 100 * 12, // €300 approx in pesewas — adjust currency
+      currency: 'EUR',
+      ref: 'VOL-' + Date.now(),
+      metadata: { name: data.firstName + ' ' + data.lastName, type: 'volunteer' },
+      callback: async function(response) {
+        data.paystackRef = response.reference;
+        data.paymentStatus = 'Paid';
+        await sendToSheet(data);
+        goStep(5);
+      },
+      onClose: function() {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+      }
+    });
+    handler.openIframe();
+  } else {
+    // Local — just save to sheet
+    sendToSheet(data).then(() => { goStep(5); });
+  }
+}
+</script>
+
+<!-- Paystack JS (load only when needed) -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+</html>

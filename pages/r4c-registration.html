@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register | Run for Change 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/r4c-registration.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="/img/favicon.png" rel="icon">
+</head>
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- HERO -->
+<section class="reg-hero" style="background-image:url('/img/DSC03304.jpg')">
+  <div class="reg-hero-inner">
+    <span class="reg-hero-tag"><i class="fas fa-running"></i> 5th Anniversary · 26 Sept 2026</span>
+    <h1><em>Run</em> for Change 2026</h1>
+    <p>Shiashie → University of Ghana, Legon &nbsp;·&nbsp; Register below to secure your place</p>
+    <a href="run4change.html" class="reg-hero-back"><i class="fas fa-arrow-left"></i> Back to Event Page</a>
+  </div>
+</section>
+
+
+<!-- BREADCRUMB -->
+<div class="reg-breadcrumb">
+  <a href="index.html">Home</a> &rsaquo;
+  <a href="run4change.html">Run for Change 2026</a> &rsaquo;
+  <strong>Registration</strong>
+</div>
+
+<!-- BODY -->
+<section class="reg-body">
+  <div class="reg-layout">
+
+    <!-- MAIN FORM COLUMN -->
+    <div class="reg-main">
+
+      <!-- PACKAGE SELECTOR -->
+      <div class="reg-card">
+        <div class="reg-card-title"><i class="fas fa-box-open"></i> Choose Your Package</div>
+        <div class="reg-pkg-grid" id="pkgGrid">
+
+          <!-- STANDARD -->
+          <label class="reg-pkg-option" data-pkg="standard" data-price="3000" data-label="Standard Runner" data-display="GHS 30" data-tshirt="false" onclick="selectPkg(this)">
+            <input type="radio" name="pkg" value="standard">
+            <div class="reg-pkg-top">
+              <div class="reg-pkg-check"></div>
+              <div>
+                <div class="reg-pkg-name-tag">Standard Runner</div>
+                <div class="reg-pkg-price-tag">GHS 30</div>
+              </div>
+            </div>
+            <div class="reg-pkg-pills">
+              <span class="reg-pill"><i class="fas fa-medal"></i> Medal</span>
+              <span class="reg-pill"><i class="fas fa-id-badge"></i> Bib Number</span>
+              <span class="reg-pill"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+          </label>
+
+          <!-- SUPPORTER -->
+          <label class="reg-pkg-option" data-pkg="supporter" data-price="10000" data-label="Supporter Runner" data-display="GHS 100" data-tshirt="true" onclick="selectPkg(this)">
+            <input type="radio" name="pkg" value="supporter">
+            <div class="reg-pkg-top">
+              <div class="reg-pkg-check"></div>
+              <div>
+                <div class="reg-pkg-name-tag">Supporter Runner</div>
+                <div class="reg-pkg-price-tag">GHS 100</div>
+              </div>
+            </div>
+            <div class="reg-pkg-pills">
+              <span class="reg-pill"><i class="fas fa-medal"></i> Medal</span>
+              <span class="reg-pill"><i class="fas fa-tshirt"></i> T-Shirt</span>
+              <span class="reg-pill"><i class="fas fa-id-badge"></i> Bib Number</span>
+              <span class="reg-pill"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+          </label>
+
+          <!-- CHAMPION -->
+          <label class="reg-pkg-option featured-pkg" data-pkg="champion" data-price="25000" data-label="Champion Runner" data-display="GHS 250" data-tshirt="true" onclick="selectPkg(this)">
+            <div class="reg-pkg-badge">Most Popular</div>
+            <input type="radio" name="pkg" value="champion">
+            <div class="reg-pkg-top">
+              <div class="reg-pkg-check"></div>
+              <div>
+                <div class="reg-pkg-name-tag">Champion Runner</div>
+                <div class="reg-pkg-price-tag">GHS 250</div>
+              </div>
+            </div>
+            <div class="reg-pkg-pills">
+              <span class="reg-pill"><i class="fas fa-medal"></i> Medal</span>
+              <span class="reg-pill"><i class="fas fa-tshirt"></i> T-Shirt</span>
+              <span class="reg-pill"><i class="fas fa-shopping-bag"></i> Tote Bag</span>
+              <span class="reg-pill"><i class="fas fa-hat-cowboy"></i> Cap</span>
+              <span class="reg-pill"><i class="fas fa-id-badge"></i> Bib + Lanyard</span>
+              <span class="reg-pill"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="reg-movement-note"><i class="fas fa-heart"></i> Automatically joins the Annual Movement</div>
+          </label>
+
+          <!-- IMPACT CHAMPION -->
+          <label class="reg-pkg-option impact-pkg" data-pkg="impact" data-price="50000" data-label="Impact Champion" data-display="GHS 500" data-tshirt="true" onclick="selectPkg(this)">
+            <input type="radio" name="pkg" value="impact">
+            <div class="reg-pkg-top">
+              <div class="reg-pkg-check"></div>
+              <div>
+                <div class="reg-pkg-name-tag">Impact Champion</div>
+                <div class="reg-pkg-price-tag">GHS 500</div>
+              </div>
+            </div>
+            <div class="reg-pkg-pills">
+              <span class="reg-pill"><i class="fas fa-medal"></i> Premium Medal</span>
+              <span class="reg-pill"><i class="fas fa-tshirt"></i> T-Shirt + Jacket</span>
+              <span class="reg-pill"><i class="fas fa-shopping-bag"></i> Tote Bag</span>
+              <span class="reg-pill"><i class="fas fa-hat-cowboy"></i> Cap</span>
+              <span class="reg-pill"><i class="fas fa-tint"></i> Water Bottle</span>
+              <span class="reg-pill"><i class="fas fa-id-card"></i> Bib + Lanyard</span>
+              <span class="reg-pill impact-pill"><i class="fas fa-star"></i> VIP Area</span>
+              <span class="reg-pill"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="reg-movement-note"><i class="fas fa-heart"></i> Automatically joins the Annual Movement</div>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- PERSONAL DETAILS -->
+      <div class="reg-card">
+        <div class="reg-card-title"><i class="fas fa-user"></i> Your Details</div>
+
+        <div class="reg-field-row">
+          <div class="reg-field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" placeholder="First name" required>
+          </div>
+          <div class="reg-field">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div class="reg-field-row">
+          <div class="reg-field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="email@example.com" required>
+          </div>
+          <div class="reg-field">
+            <label>Phone / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="phone" placeholder="+233 XX XXX XXXX" required>
+          </div>
+        </div>
+
+        <!-- T-shirt size — shown/hidden based on package -->
+        <div class="reg-field-row" id="tshirtRow" style="display:none">
+          <div class="reg-field">
+            <label>T-Shirt Size <span class="req">*</span></label>
+            <select id="tshirt">
+              <option value="">Select size</option>
+              <option>XS</option><option>S</option><option>M</option>
+              <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+          </div>
+          <div class="reg-field"></div>
+        </div>
+
+        <label class="reg-consent">
+          <input type="checkbox" id="consent" required>
+          I agree to receive updates about Run for Change and future Spursbase Foundation events. <span class="req">*</span>
+        </label>
+      </div>
+
+      <!-- PAYMENT BUTTON -->
+      <div class="reg-pay-block">
+        <div class="reg-pay-summary" id="paySummary" style="display:none">
+          <div class="reg-pay-summary-pkg" id="payPkgLabel">—</div>
+          <div class="reg-pay-summary-amount" id="payAmountLabel">—</div>
+        </div>
+        <button class="reg-btn-pay" id="payBtn" onclick="handlePayment()">
+          <i class="fas fa-lock"></i> <span id="payBtnText">Select a Package to Continue</span>
+        </button>
+        <div class="reg-secure-note">
+          <i class="fas fa-shield-alt"></i> Secured by Paystack &nbsp;·&nbsp;
+          <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> &nbsp; Visa · Mastercard · Mobile Money
+        </div>
+      </div>
+
+      <p class="reg-support-note">
+        Need help? Call <a href="tel:0558207228">055 820 7228</a> or email <a href="mailto:community@spursbasefoundation.org">community@spursbasefoundation.org</a>
+      </p>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="reg-sidebar">
+
+      <!-- Selected package details -->
+      <div class="reg-sidebar-card" id="pkgDetailCard" style="display:none">
+        <div class="reg-sidebar-title">Your Package</div>
+        <div class="reg-spkg-name" id="sb-pkg-name"></div>
+        <div class="reg-spkg-price" id="sb-pkg-price"></div>
+        <ul class="reg-spkg-items" id="sb-pkg-items"></ul>
+        <div class="reg-spkg-movement" id="sb-movement" style="display:none">
+          <i class="fas fa-heart"></i>
+          <span>You'll automatically be part of the Run for Change movement every year, running in solidarity for children in underserved communities.</span>
+        </div>
+      </div>
+
+      <!-- Event details -->
+      <div class="reg-sidebar-card">
+        <div class="reg-sidebar-title">Event Details</div>
+        <div class="reg-event-info">
+          <div class="reg-info-row"><i class="fas fa-calendar-alt"></i><div><strong>Date</strong><span>Saturday, 26 September 2026</span></div></div>
+          <div class="reg-info-row"><i class="fas fa-clock"></i><div><strong>Assembly</strong><span>7:30 AM. Run starts 8:00 AM</span></div></div>
+          <div class="reg-info-row"><i class="fas fa-map-marker-alt"></i><div><strong>Start</strong><span>Shiashie, Accra</span></div></div>
+          <div class="reg-info-row"><i class="fas fa-flag-checkered"></i><div><strong>Finish</strong><span>University of Ghana, Legon</span></div></div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- SUCCESS STATE -->
+  <div class="reg-success-screen" id="successScreen" style="display:none">
+    <div class="reg-success-inner">
+      <div class="reg-success-icon"><i class="fas fa-check"></i></div>
+      <h2>You're Registered!</h2>
+      <p>Thank you for joining Run for Change 2026. A confirmation email with your QR code and event details has been sent to <strong id="success-email"></strong>.</p>
+      <div class="reg-success-steps">
+        <div class="reg-ss-item"><div class="reg-ss-num">1</div><strong>Check Your Email</strong><p>Your QR code and full event details are on their way.</p></div>
+        <div class="reg-ss-item"><div class="reg-ss-num">2</div><strong>Arrive at 7:30 AM</strong><p>Assembly at Shiashie. Run starts 8:00 AM sharp.</p></div>
+        <div class="reg-ss-item"><div class="reg-ss-num">3</div><strong>Collect Your Pack</strong><p>Show your QR code at the registration desk to collect your items.</p></div>
+      </div>
+      <a href="run4change.html" class="reg-success-btn">Back to Event Page <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+</section>
+
+<my-footer></my-footer>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+const PAYSTACK_KEY = 'pk_live_7d657719203b1deb733fd76deeb612de0704513f';
+const SHEET_URL    = 'https://script.google.com/macros/s/AKfycby_c354OU48f8LL1QzPtm6ClosDPfery8Lu06oBYC6GlyhKuK114MZcLUp19R8kEotB/exec';
+
+const PACKAGES = {
+  standard: {
+    label: 'Standard Runner', price: 3000, display: 'GHS 30', tshirt: false, movement: false,
+    items: ['Official Run for Change medal','Participant bib number','Certificate of participation','Post-run celebration access']
+  },
+  supporter: {
+    label: 'Supporter Runner', price: 10000, display: 'GHS 100', tshirt: true, movement: false,
+    items: ['Official Run for Change medal','Branded T-shirt (your size)','Participant bib number','Certificate of participation','Post-run celebration access']
+  },
+  champion: {
+    label: 'Champion Runner', price: 25000, display: 'GHS 250', tshirt: true, movement: true,
+    items: ['Official medal + branded T-shirt','Tote bag + cap','Bib number + lanyard','Certificate of participation','Post-run celebration access','Annual Run for Change movement membership']
+  },
+  impact: {
+    label: 'Impact Champion', price: 50000, display: 'GHS 500', tshirt: true, movement: true,
+    items: ['Premium medal + T-shirt + jacket','Tote bag + cap + water bottle','Bib number + branded lanyard','VIP assembly area & priority start','Certificate of participation','Post-run celebration access','Annual Run for Change movement membership']
+  }
+};
+
+let selectedPkg = null;
+
+// Pre-select from URL param
+(function() {
+  const p = new URLSearchParams(window.location.search).get('pkg');
+  if (p && PACKAGES[p]) { const el = document.querySelector(`[data-pkg="${p}"]`); if (el) selectPkg(el); }
+})();
+
+function selectPkg(el) {
+  document.querySelectorAll('.reg-pkg-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPkg = el.dataset.pkg;
+  const pkg = PACKAGES[selectedPkg];
+
+  // T-shirt row
+  document.getElementById('tshirtRow').style.display = pkg.tshirt ? '' : 'none';
+  if (!pkg.tshirt) document.getElementById('tshirt').value = '';
+
+  // Pay button
+  const btn = document.getElementById('payBtn');
+  btn.disabled = false;
+  document.getElementById('payBtnText').textContent = `Pay ${pkg.display} & Register`;
+
+  // Pay summary strip
+  const ps = document.getElementById('paySummary');
+  ps.style.display = '';
+  document.getElementById('payPkgLabel').textContent = pkg.label;
+  document.getElementById('payAmountLabel').textContent = pkg.display;
+
+  // Sidebar
+  document.getElementById('pkgDetailCard').style.display = '';
+  document.getElementById('sb-pkg-name').textContent = pkg.label;
+  document.getElementById('sb-pkg-price').textContent = pkg.display;
+  document.getElementById('sb-pkg-items').innerHTML = pkg.items.map(i => `<li><i class="fas fa-check"></i>${i}</li>`).join('');
+  const mv = document.getElementById('sb-movement');
+  mv.style.display = pkg.movement ? '' : 'none';
+}
+
+function handlePayment() {
+  if (!selectedPkg) { alert('Please select a package first.'); return; }
+  const pkg   = PACKAGES[selectedPkg];
+  const first = document.getElementById('firstName').value.trim();
+  const last  = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const tshirt = document.getElementById('tshirt').value;
+  const consent = document.getElementById('consent').checked;
+
+  if (!first || !last) { alert('Please enter your full name.'); return; }
+  if (!email) { alert('Please enter your email address.'); return; }
+  if (!phone) { alert('Please enter your phone number.'); return; }
+  if (pkg.tshirt && !tshirt) { alert('Please select your T-shirt size.'); return; }
+  if (!consent) { alert('Please agree to receive updates to continue.'); return; }
+
+  const btn = document.getElementById('payBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening payment...';
+
+  PaystackPop.setup({
+    key: PAYSTACK_KEY,
+    email,
+    amount: pkg.price,
+    currency: 'GHS',
+    ref: 'R4C_' + Date.now(),
+    metadata: { name: first + ' ' + last, package: pkg.label },
+    callback: function(response) {
+      fetch(SHEET_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          reference: response.reference,
+          name: first + ' ' + last,
+          email, phone, tshirt,
+          packageName: pkg.label,
+          amount: pkg.price,
+          movement: pkg.movement,
+          event: 'Run for Change 2026'
+        }),
+        redirect: 'follow'
+      })
+      .then(r => r.json())
+      .then(data => { showSuccess(email); })
+      .catch(() => { showSuccess(email); });
+    },
+    onClose: function() {
+      btn.disabled = false;
+      btn.innerHTML = `<i class="fas fa-lock"></i> <span id="payBtnText">Pay ${pkg.display} & Register</span>`;
+    }
+  }).openIframe();
+}
+
+function showSuccess(email) {
+  document.querySelector('.reg-layout').style.display = 'none';
+  document.getElementById('successScreen').style.display = '';
+  document.getElementById('success-email').textContent = email;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

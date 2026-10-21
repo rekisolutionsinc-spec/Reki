@@ -1,0 +1,103 @@
+/* ============================================================
+   vision.css — Our Vision page
+   ============================================================ */
+:root {
+  --vs-blue:   #2b2b88;
+  --vs-orange: #ff6633;
+  --vs-light:  #f5f6fa;
+  --vs-border: #e4e4ef;
+  --vs-text:   #1c1c2e;
+  --vs-muted:  #5a5a72;
+}
+.who-hero {
+  background: url('/img/DSC05549.jpg') 50% 20% / cover no-repeat;
+  height: 420px; position: relative;
+}
+.who-overlay {
+  background: linear-gradient(to right, rgba(43,43,136,0.75) 0%, rgba(0,0,0,0.3) 100%);
+  height: 100%; display: flex; align-items: center; padding-left: 7%;
+}
+.who-label {
+  background: var(--vs-orange); color: #fff; font-weight: 700;
+  padding: 14px 28px; font-size: 1.1rem; letter-spacing: 2px;
+  text-transform: uppercase; display: inline-flex; align-items: center;
+  gap: 12px; box-shadow: 4px 4px 0 rgba(0,0,0,0.18);
+}
+.back-arrow { font-size: 1rem; cursor: pointer; }
+.breadcrumb-nav {
+  background: var(--vs-light); padding: 13px 7%; font-size: 0.88rem;
+  color: var(--vs-muted); border-bottom: 1px solid var(--vs-border);
+}
+.breadcrumb-nav a { color: var(--vs-muted); text-decoration: none; transition: color .2s; }
+.breadcrumb-nav a:hover { color: var(--vs-orange); }
+.breadcrumb-nav span { color: var(--vs-text); font-weight: 600; }
+
+.vision-content {
+  background: #fff;
+  padding: 72px 7%;
+  animation: vsFadeIn .9s ease both;
+}
+@keyframes vsFadeIn {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.vision-content .container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Large opening statement */
+.vision-content .container > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--vs-blue);
+  line-height: 1.65;
+  padding-bottom: 28px;
+  border-bottom: 2px solid var(--vs-border);
+  margin-bottom: 40px;
+  position: relative;
+}
+.vision-content .container > p:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 80px; height: 2px;
+  background: var(--vs-orange);
+}
+
+/* Pull quote for second paragraph */
+.vision-content .container > p:nth-child(2) {
+  font-size: 1.08rem;
+  color: var(--vs-muted);
+  line-height: 1.9;
+  padding: 24px 28px;
+  background: var(--vs-light);
+  border-left: 5px solid var(--vs-orange);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 28px;
+}
+
+/* Remaining paragraphs */
+.vision-content p {
+  font-size: 1.02rem;
+  color: var(--vs-muted);
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+/* Last paragraph — CTA style */
+.vision-content .container > p:last-child {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--vs-text);
+  padding: 24px 28px;
+  background: linear-gradient(135deg, var(--vs-blue) 0%, #3d3db0 100%);
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 32px;
+}
+
+@media (max-width: 700px) {
+  .vision-content { padding: 48px 5%; }
+  .vision-content .container > p:first-child { font-size: 1.2rem; }
+}

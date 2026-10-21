@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spursbase Foundation - Programs</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/programs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="/img/favicon.png" rel="icon" />
+</head>
+<body>
+
+<!-- HEADER -->
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<div class="prg-page">
+
+  <!-- SIDEBAR -->
+  <div class="prg-sidebar">
+    <div class="prg-sidebar__tab prg-sidebar__tab--active" onclick="prgShowSection('our-work', this)">
+      <h2>Our Work</h2>
+    </div>
+    <div class="prg-sidebar__tab" onclick="prgShowSection('global-reach', this)">
+      <h2>Global Reach</h2>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="prg-main">
+    <h1 class="prg-page-title">Our Programmes</h1>
+
+    <!-- OUR WORK -->
+    <div class="prg-section prg-section--active" id="our-work">
+      <div class="prg-section__heading">What we do</div>
+      <div class="prg-grid">
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='education.html'">
+          <img class="prg-card__img" src="/img/Ed.jpg" alt="Education Programs" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Education Programs</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='health.html'">
+          <img class="prg-card__img" src="/img/DSC03825.jpg" alt="Health & Wellbeing" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Health & Wellbeing</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='community.html'">
+          <img class="prg-card__img" src="/img/DSC00380.jpg" alt="Community Development" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Community Development</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='policy.html'">
+          <img class="prg-card__img" src="/img/DSC04221.jpg" alt="Policy & Advocacy" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Policy & Advocacy</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='elevate.html'">
+          <img class="prg-card__img" src="/img/IMG_0170.jpg" alt="Elevate Hub" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Elevate Hub</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="window.location.href='innovation.html'">
+          <img class="prg-card__img" src="/img/DSC09605.jpg" alt="Innovation & Technology" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Innovation & Technology</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GLOBAL REACH -->
+    <div class="prg-section" id="global-reach">
+      <div class="prg-section__heading">Where we operate</div>
+      <div class="prg-grid">
+
+        <div class="prg-card prg-card--has-img" onclick="prgCardClick(event,'Africa','Our programmes in Africa focus on education, health, and community empowerment across sub-Saharan nations.')">
+          <img class="prg-card__img" src="/img/mei.jpg" alt="Africa" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Africa</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="prgCardClick(event,'Middle East','Supporting communities in conflict-affected regions with education access, livelihood skills, and protection programmes.')">
+          <img class="prg-card__img" src="/img/cii.jpg" alt="Middle East" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Middle East</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="prgCardClick(event,'South Asia','Expanding reach in South Asia through school partnerships, digital learning hubs, and teacher training.')">
+          <img class="prg-card__img" src="/img/DSC03825.jpg" alt="South Asia" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">South Asia</div>
+        </div>
+
+        <div class="prg-card prg-card--has-img" onclick="prgCardClick(event,'Latin America','Partnering with local organisations to deliver youth empowerment, civic education, and innovation programmes.')">
+          <img class="prg-card__img" src="/img/IMG_0170.jpg" alt="Latin America" />
+          <div class="prg-card__overlay"></div>
+          <div class="prg-card__title">Latin America</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="prg-modal" id="prg-modal">
+  <div class="prg-modal__box">
+    <button class="prg-modal__close" onclick="prgCloseModal()">✕</button>
+    <div class="prg-modal__label">Spursbase Programme</div>
+    <h3 class="prg-modal__title" id="prg-modal-title"></h3>
+    <p class="prg-modal__text" id="prg-modal-text"></p>
+    <button class="prg-modal__btn" onclick="prgCloseModal()">Close</button>
+  </div>
+</div>
+
+<my-footer></my-footer>
+
+<script>
+  function prgShowSection(id, tab) {
+    document.querySelectorAll('.prg-section').forEach(s => s.classList.remove('prg-section--active'));
+    document.querySelectorAll('.prg-sidebar__tab').forEach(t => t.classList.remove('prg-sidebar__tab--active'));
+    document.getElementById(id).classList.add('prg-section--active');
+    tab.classList.add('prg-sidebar__tab--active');
+  }
+
+  function prgCardClick(event, title, text) {
+    document.getElementById('prg-modal-title').innerText = title;
+    document.getElementById('prg-modal-text').innerText  = text;
+    document.getElementById('prg-modal').classList.add('prg-modal--open');
+  }
+
+  function prgCloseModal() {
+    document.getElementById('prg-modal').classList.remove('prg-modal--open');
+  }
+
+  document.getElementById('prg-modal').addEventListener('click', function(e) {
+    if (e.target === this) prgCloseModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') prgCloseModal(); });
+</script>
+
+</body>
+</html>

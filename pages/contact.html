@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spursbase Foundation - Contact Us</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="/img/favicon.png" rel="icon" />
+</head>
+<body>
+
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- HERO — image inline, never in CSS -->
+<section class="contact-hero" style="background-image:url('/img/DSC05274.jpg')">
+  <div class="contact-hero-overlay">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Whether you have a question, want to get involved, or just want to say hello reach out today.</p>
+  </div>
+</section>
+
+<!-- CONTACT BODY -->
+<section class="contact-body">
+  <div class="contact-inner">
+
+    <!-- LEFT: FORM -->
+    <div class="contact-form-card">
+      <div class="contact-form-header">
+        <h2>Send Us a Message</h2>
+        <p>You can also call us on <strong>+233 203 769 832</strong>. Our hours are <strong>7am. 5pm GMT</strong>, Monday to Friday.</p>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="cf-field">
+          <label for="cfName">Your Name <span class="req">*</span></label>
+          <input type="text" id="cfName" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="cf-field">
+          <label for="cfEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="cfEmail" placeholder="your@email.com" required />
+        </div>
+
+        <div class="cf-field">
+          <label for="cfPhone">Phone Number (optional)</label>
+          <input type="tel" id="cfPhone" placeholder="+233 XX XXX XXXX" />
+        </div>
+
+        <div class="cf-field">
+          <label for="cfReason">Reason for Contact <span class="req">*</span></label>
+          <select id="cfReason" required>
+            <option value="">Please select…</option>
+            <option>Volunteer Opportunities</option>
+            <option>Donations</option>
+            <option>Partnerships &amp; Sponsorship</option>
+            <option>Media &amp; Press</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="cf-field">
+          <label for="cfMessage">Your Message <span class="req">*</span></label>
+          <textarea id="cfMessage" rows="5" placeholder="Write your message here…" required></textarea>
+        </div>
+
+        <button type="submit" class="cf-submit" id="cfSubmit">
+          <span id="cfBtnText"><i class="fas fa-paper-plane"></i> Send Message</span>
+          <span id="cfBtnLoading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+        </button>
+
+        <!-- Success / error messages -->
+        <div class="cf-success" id="cfSuccess" style="display:none">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Message sent!</strong>
+            <p>Thank you for reaching out. We'll get back to you within 1 to 2 business days.</p>
+          </div>
+        </div>
+        <div class="cf-error" id="cfError" style="display:none">
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="cfErrorMsg">Something went wrong. Please try again.</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- RIGHT: INFO CARDS -->
+    <div class="contact-info-col">
+
+      <div class="contact-info-card">
+        <div class="cic-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h3>Visit Us</h3>
+          <p>P.O. Box 1647, La Bawaleshi<br>East Legon, Accra, Ghana</p>
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="cic-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+233203769832">+233 203 769 832</a></p>
+          <p class="cic-note">Mon to Fri, 7am. 5pm GMT</p>
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="cic-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:info@spursbasefoundation.org">info@spursbasefoundation.org</a></p>
+          <p><a href="mailto:community@spursbasefoundation.org">community@spursbasefoundation.org</a></p>
+        </div>
+      </div>
+
+      <div class="contact-info-card contact-sponsor-card">
+        <div class="cic-icon cic-orange"><i class="fas fa-handshake"></i></div>
+        <div>
+          <h3>Become a Sponsor</h3>
+          <p>Want to make a bigger impact? Learn how to partner with us.</p>
+          <a href="become-sponsor.html" class="cic-link">Find out more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP — Spursbase Foundation, East Legon, Accra -->
+<section class="contact-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3!2d-0.1637!3d5.6350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSpursbase+Foundation%2C+East+Legon%2C+Accra%2C+Ghana!5e0!3m2!1sen!2sgh!4v1"
+    width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="Spursbase Foundation Location">
+  </iframe>
+</section>
+
+<my-footer></my-footer>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────
+// Paste your Google Apps Script Web App URL here after deploying
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxWEDTi_f-QtXlysODraRVzyYdZvVGOwVlfyRGu1mpVGyroWLwjV2yePWuB3wztp0-I0g/exec';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const name    = document.getElementById('cfName').value.trim();
+  const email   = document.getElementById('cfEmail').value.trim();
+  const phone   = document.getElementById('cfPhone').value.trim();
+  const reason  = document.getElementById('cfReason').value;
+  const message = document.getElementById('cfMessage').value.trim();
+
+  // Basic validation
+  if (!name || !email || !reason || !message) {
+    showError('Please fill in all required fields.');
+    return;
+  }
+
+  // Show loading state
+  document.getElementById('cfBtnText').style.display    = 'none';
+  document.getElementById('cfBtnLoading').style.display = 'inline-flex';
+  document.getElementById('cfSubmit').disabled = true;
+  document.getElementById('cfError').style.display   = 'none';
+  document.getElementById('cfSuccess').style.display = 'none';
+
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sheet: 'Contact Messages',
+        timestamp: new Date().toLocaleString(),
+        name, email, phone, reason, message
+      })
+    });
+
+    // Show success (no-cors means we can't read response — assume success)
+    document.getElementById('cfSuccess').style.display = 'flex';
+    document.getElementById('contactForm').reset();
+
+  } catch (err) {
+    showError('Could not send your message. Please email us directly at info@spursbasefoundation.org');
+  } finally {
+    document.getElementById('cfBtnText').style.display    = 'inline-flex';
+    document.getElementById('cfBtnLoading').style.display = 'none';
+    document.getElementById('cfSubmit').disabled = false;
+  }
+});
+
+function showError(msg) {
+  document.getElementById('cfErrorMsg').textContent = msg;
+  document.getElementById('cfError').style.display = 'flex';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* ======================================================
+   base.css
+   Spursbase Foundation
+   ====================================================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--sb-font);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Shared editorial foundations for the archived Spursbase pages. */
+:root {
+    --sb-content-width: 1360px;
+    --sb-page-gutter: clamp(18px, 3.2vw, 44px);
+    --sb-font: "Greycliff CF", "Greycliff", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    --sb-blue: #2b2b88;
+    --sb-deep-blue: #17174f;
+    --sb-orange: #ff6633;
+    --sb-paper: #f5f6fa;
+    --sb-ink: #1c1c2e;
+    --sb-muted: #5a5a72;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+}
+
+body {
+    color: var(--sb-ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 3px solid var(--sb-orange);
+    outline-offset: 4px;
+}
+
+::selection {
+    color: #fff;
+    background: var(--sb-blue);
+}
+
+.container {
+    width: min(var(--sb-content-width), calc(100% - var(--sb-page-gutter) - var(--sb-page-gutter)));
+    max-width: var(--sb-content-width);
+    padding-inline: 0;
+}
+
+.legacy-page :is(section, [class*="-hero"], [class*="-section"])
+> :is(.container, [class$="-inner"], [class$="-content"]) {
+    width: min(var(--sb-content-width), calc(100% - var(--sb-page-gutter) - var(--sb-page-gutter)));
+    max-width: var(--sb-content-width);
+    margin-inline: auto;
+}
+
+.legacy-route {
+    min-height: 45vh;
+}
+
+.legacy-page section {
+    scroll-margin-top: 84px;
+}
+
+.legacy-page h1,
+.legacy-page h2,
+.legacy-page h3 {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+}
+
+.legacy-page p {
+    text-wrap: pretty;
+    letter-spacing: 0.005em;
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: min(var(--sb-content-width), calc(100% - var(--sb-page-gutter) - var(--sb-page-gutter)));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

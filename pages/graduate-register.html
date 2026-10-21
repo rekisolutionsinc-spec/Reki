@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graduate Program Registration  |  Spursbase Foundation</title>
+     <link rel="stylesheet" href="/css/css/base.css" />
+   <link rel="stylesheet" href="/css/css/header.css" />
+   <link rel="stylesheet" href="/css/css/footer.css" />
+   <link rel="stylesheet" href="/css/css/graduate-register.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <!-- Favicon -->
+    <link href="/img/favicon.png" rel="icon">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- PAGE HEADER -->
+<div class="gr-header">
+  <div class="gr-header-inner">
+    <a href="graduate.html" class="gr-back"><i class="fas fa-arrow-left"></i> Back to Graduate Program</a>
+    <div>
+      <h1>Graduate Program Registration</h1>
+      <p>Complete your enrolment for the Elevate Graduate Learning Program.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SELECTED TIER BANNER -->
+<div class="gr-tier-banner" id="tierBanner">
+  <div class="gr-tier-banner-inner">
+    <div class="gr-tb-left">
+      <span class="gr-tb-label">Selected Tier</span>
+      <span class="gr-tb-name" id="tierDisplay">—</span>
+    </div>
+    <div class="gr-tb-right">
+      <span class="gr-tb-price" id="tierPrice">—</span>
+      <a href="graduate.html#glp-pricing" class="gr-tb-change">Change tier</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="gr-progress-bar">
+  <div class="gr-progress-step active" data-step="1"><div class="gr-step-dot">1</div><span>Personal Info</span></div>
+  <div class="gr-progress-line"></div>
+  <div class="gr-progress-step" data-step="2"><div class="gr-step-dot">2</div><span>Education</span></div>
+  <div class="gr-progress-line"></div>
+  <div class="gr-progress-step" data-step="3"><div class="gr-step-dot">3</div><span>Motivation</span></div>
+  <div class="gr-progress-line"></div>
+  <div class="gr-progress-step" data-step="4"><div class="gr-step-dot">4</div><span>Payment</span></div>
+  <div class="gr-progress-line"></div>
+  <div class="gr-progress-step" data-step="5"><div class="gr-step-dot"><i class="fas fa-check"></i></div><span>Done</span></div>
+</div>
+
+<section class="gr-body">
+  <div class="gr-inner">
+
+    <!-- STEP 1: PERSONAL -->
+    <div class="gr-step-panel active" id="step-1">
+      <div class="gr-card">
+        <div class="gr-card-title"><i class="fas fa-user"></i> Personal Information</div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>First Name <span class="req">*</span></label><input type="text" id="firstName" placeholder="First Name" required /></div>
+          <div class="gr-field"><label>Last Name <span class="req">*</span></label><input type="text" id="lastName" placeholder="Last Name" required /></div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Date of Birth <span class="req">*</span></label><input type="date" id="dob" required /></div>
+          <div class="gr-field"><label>Gender <span class="req">*</span></label>
+            <select id="gender" required>
+              <option value="">Select</option><option>Male</option><option>Female</option><option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Email Address <span class="req">*</span></label><input type="email" id="email" placeholder="email@example.com" required /></div>
+          <div class="gr-field"><label>Phone / WhatsApp <span class="req">*</span></label><input type="tel" id="phone" placeholder="+233 XX XXX XXXX" required /></div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>City <span class="req">*</span></label><input type="text" id="city" placeholder="City" required /></div>
+          <div class="gr-field"><label>Country <span class="req">*</span></label>
+            <select id="country" required onchange="checkInternational(this.value)">
+              <option value="">Select Country</option>
+              <option>Ghana</option><option>Nigeria</option><option>United Kingdom</option>
+              <option>United States</option><option>Germany</option><option>Netherlands</option>
+              <option>Canada</option><option>France</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div id="intl-note" style="display:none; margin-top:4px;">
+          <div class="gr-info-note"><i class="fas fa-globe"></i> As an international participant, our team will confirm your pricing in EUR upon reviewing your application.</div>
+        </div>
+      </div>
+      <div class="gr-nav-row"><span></span><button class="gr-btn-next" onclick="goStep(2)">Next <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+
+    <!-- STEP 2: EDUCATION -->
+    <div class="gr-step-panel" id="step-2">
+      <div class="gr-card">
+        <div class="gr-card-title"><i class="fas fa-graduation-cap"></i> Education & Background</div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Highest Qualification <span class="req">*</span></label>
+            <select id="qualification" required>
+              <option value="">Select</option><option>HND / Diploma</option><option>Bachelor's Degree</option>
+              <option>Postgraduate Diploma</option><option>Master's Degree</option><option>PhD</option><option>Other</option>
+            </select>
+          </div>
+          <div class="gr-field"><label>Field of Study <span class="req">*</span></label><input type="text" id="fieldOfStudy" placeholder="e.g. Education, Health, Business" required /></div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Institution Attended <span class="req">*</span></label><input type="text" id="institution" placeholder="University or College Name" required /></div>
+          <div class="gr-field"><label>Year of Graduation <span class="req">*</span></label><input type="number" id="gradYear" placeholder="e.g. 2024" min="2010" max="2026" required /></div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Current Employment Status</label>
+            <select id="employment">
+              <option value="">Select</option><option>Employed Full-Time</option><option>Employed Part-Time</option>
+              <option>Self-Employed / Freelance</option><option>Unemployed, Actively Seeking</option>
+              <option>Pursuing Further Studies</option><option>Other</option>
+            </select>
+          </div>
+          <div class="gr-field"><label>Programme Tier <span class="req">*</span></label>
+            <select id="tierSelect" required onchange="updateTierFromSelect(this.value)">
+              <option value="">Select Tier</option>
+              <option value="starter">Starter, GHS 500 / 3 months</option>
+              <option value="professional">Professional, GHS 900 / 6 months</option>
+              <option value="leadership">Leadership, GHS 1,500 / 12 months</option>
+            </select>
+          </div>
+        </div>
+        <div class="gr-field-row">
+          <div class="gr-field"><label>Area of Interest <span class="req">*</span></label>
+            <select id="interest" required>
+              <option value="">Select</option><option>Education & Teaching</option><option>Health & Wellbeing</option>
+              <option>Community Development</option><option>Innovation & Technology</option>
+              <option>Policy & Advocacy</option><option>Communications & Media</option><option>Programme Management</option>
+            </select>
+          </div>
+          <div class="gr-field"><label>How did you hear about us?</label>
+            <select id="source">
+              <option value="">Select</option><option>Social Media</option><option>Friend or Family</option>
+              <option>Website</option><option>Event or Programme</option><option>News / Media</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="gr-nav-row">
+        <button class="gr-btn-back" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="gr-btn-next" onclick="goStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: MOTIVATION -->
+    <div class="gr-step-panel" id="step-3">
+      <div class="gr-card">
+        <div class="gr-card-title"><i class="fas fa-star"></i> Motivation & Goals</div>
+        <div class="gr-field-row full">
+          <div class="gr-field">
+            <label>Why do you want to join the Elevate Graduate Program? <span class="req">*</span></label>
+            <textarea id="motivation" placeholder="Tell us about your goals, what draws you to Spursbase Foundation, and what you hope to gain..." style="min-height:130px" required></textarea>
+          </div>
+        </div>
+        <div class="gr-field-row full">
+          <div class="gr-field">
+            <label>What skills or experience do you bring?</label>
+            <textarea id="skills" placeholder="Describe any relevant skills, experience, or passion areas you'd like to contribute..."></textarea>
+          </div>
+        </div>
+        <div class="gr-field-row full">
+          <div class="gr-field">
+            <label>What outcome are you working toward? <span class="req">*</span></label>
+            <select id="outcome" required>
+              <option value="">Select your primary goal</option>
+              <option>Employment in the development / NGO sector</option>
+              <option>Starting my own social enterprise</option>
+              <option>Career change into education or health</option>
+              <option>Leadership development and confidence</option>
+              <option>Building my professional network</option>
+              <option>Giving back to my community</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <!-- Terms -->
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid #e4e4ef;">
+          <p class="gr-terms-text">By submitting this form, I confirm that all information provided is true and correct. I understand that enrolment is subject to review and payment, and I agree to Spursbase Foundation's programme policies.</p>
+          <label class="gr-checkbox-item">
+            <input type="checkbox" id="agreeTerms" required /> I accept the terms and conditions <span class="req">*</span>
+          </label>
+        </div>
+      </div>
+      <div class="gr-nav-row">
+        <button class="gr-btn-back" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="gr-btn-next" onclick="goStep(4)">Proceed to Payment <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 4: PAYMENT -->
+    <div class="gr-step-panel" id="step-4">
+      <div class="gr-card">
+        <div class="gr-card-title"><i class="fas fa-credit-card"></i> Payment</div>
+
+        <!-- Summary -->
+        <div class="gr-payment-summary" id="paymentSummary">
+          <div class="gr-ps-row"><span>Name</span><strong id="ps-name">—</strong></div>
+          <div class="gr-ps-row"><span>Email</span><strong id="ps-email">—</strong></div>
+          <div class="gr-ps-row"><span>Selected Tier</span><strong id="ps-tier">—</strong></div>
+          <div class="gr-ps-row gr-ps-total"><span>Amount Due</span><strong id="ps-amount">—</strong></div>
+        </div>
+
+        <!-- International note -->
+        <div id="intl-payment-note" style="display:none; margin-top:16px;">
+          <div class="gr-info-note"><i class="fas fa-info-circle"></i> International pricing will be confirmed by our team after reviewing your application. You will receive a payment link via email within 2 working days.</div>
+        </div>
+
+        <!-- Payment options -->
+        <div class="gr-payment-methods" id="paymentMethods">
+          <div class="gr-pm-label">Select Payment Method</div>
+          <div class="gr-pm-grid">
+            <button class="gr-pm-btn active" onclick="selectPayment(this,'paystack')">
+              <i class="fas fa-lock"></i> Pay via Paystack
+              <span>Card, Mobile Money</span>
+            </button>
+            <button class="gr-pm-btn" onclick="selectPayment(this,'bank')">
+              <i class="fas fa-university"></i> Bank Transfer
+              <span>Manual transfer, details sent by email</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="gr-payment-logos">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fas fa-mobile-alt"></i>
+          <span>Secure payment by Paystack · Mobile Money accepted</span>
+        </div>
+      </div>
+      <div class="gr-nav-row">
+        <button class="gr-btn-back" onclick="goStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="gr-btn-submit" id="submitBtn" onclick="submitForm()">
+          <i class="fas fa-lock"></i> Complete Enrolment
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 5: SUCCESS -->
+    <div class="gr-step-panel" id="step-5">
+      <div class="gr-success-box">
+        <div class="gr-success-icon"><i class="fas fa-check"></i></div>
+        <h2>Enrolment Submitted!</h2>
+        <p id="successMessage">Thank you for applying to the Elevate Graduate Learning Program. You will receive a <strong>confirmation email</strong> shortly with your enrolment details, payment confirmation, and next steps.</p>
+        <div class="gr-success-steps">
+          <div class="gr-ss-item">
+            <div class="gr-ss-num">1</div>
+            <div><strong>Check Your Email</strong><p>A confirmation email is on its way with your reference number and programme information.</p></div>
+          </div>
+          <div class="gr-ss-item">
+            <div class="gr-ss-num">2</div>
+            <div><strong>Welcome & Onboarding</strong><p>Our team will contact you within 5 working days to confirm your enrolment and share your onboarding pack.</p></div>
+          </div>
+          <div class="gr-ss-item">
+            <div class="gr-ss-num">3</div>
+            <div><strong>Orientation Session</strong><p>You'll be invited to your orientation session where you'll meet your mentor and cohort before the programme begins.</p></div>
+          </div>
+        </div>
+        <a href="index.html" class="gr-home-btn">Return to Home <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<my-footer></my-footer>
+
+<script>
+// ─── CONFIG — Replace these with your real values ───────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const PAYSTACK_KEY = 'pk_live_YOUR_PAYSTACK_KEY';
+
+// Tier data
+const TIERS = {
+  starter:      { name: 'Starter',      duration: '3 months',  price: 500,  label: 'GHS 500', currency: 'GHS' },
+  professional: { name: 'Professional', duration: '6 months',  price: 900,  label: 'GHS 900', currency: 'GHS' },
+  leadership:   { name: 'Leadership',   duration: '12 months', price: 1500, label: 'GHS 1,500', currency: 'GHS' }
+};
+
+let currentStep = 1;
+let selectedTier = '';
+let selectedPayMethod = 'paystack';
+let isInternational = false;
+
+// ─── INIT — read tier from URL param ─────────────────────────────────────────
+(function init() {
+  const params = new URLSearchParams(window.location.search);
+  const t = params.get('tier');
+  if (t && TIERS[t]) setTier(t);
+})();
+
+function setTier(t) {
+  selectedTier = t;
+  const tier = TIERS[t];
+  document.getElementById('tierDisplay').textContent = tier.name + ' | ' + tier.duration;
+  document.getElementById('tierPrice').textContent = tier.label;
+  document.getElementById('tierBanner').classList.add('has-tier');
+  // Sync dropdown in step 2
+  const sel = document.getElementById('tierSelect');
+  if (sel) sel.value = t;
+}
+
+function updateTierFromSelect(val) {
+  if (val) setTier(val);
+}
+
+function checkInternational(country) {
+  isInternational = country !== 'Ghana' && country !== '';
+  document.getElementById('intl-note').style.display = isInternational ? 'block' : 'none';
+}
+
+function selectPayment(btn, method) {
+  document.querySelectorAll('.gr-pm-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedPayMethod = method;
+}
+
+// ─── NAVIGATION ───────────────────────────────────────────────────────────────
+function goStep(n) {
+  if (n > currentStep && !validateStep(currentStep)) return;
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  document.querySelectorAll('.gr-progress-step').forEach((s, i) => {
+    s.classList.toggle('active', i < n);
+    s.classList.toggle('done', i < n - 1);
+  });
+  document.querySelectorAll('.gr-progress-line').forEach((l, i) => {
+    l.classList.toggle('active', i < n - 1);
+  });
+  currentStep = n;
+  document.getElementById('step-' + n).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (n === 4) populatePaymentSummary();
+}
+
+function validateStep(n) {
+  const panel = document.getElementById('step-' + n);
+  const required = panel.querySelectorAll('[required]');
+  let ok = true;
+  required.forEach(el => {
+    el.classList.remove('gr-error');
+    const empty = el.type === 'checkbox' ? !el.checked : !el.value.trim();
+    if (empty) { el.classList.add('gr-error'); ok = false; }
+  });
+  if (!ok) alert('Please fill in all required fields before continuing.');
+  return ok;
+}
+
+function populatePaymentSummary() {
+  const tier = TIERS[selectedTier] || {};
+  document.getElementById('ps-name').textContent =
+    (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim() || '—';
+  document.getElementById('ps-email').textContent = document.getElementById('email').value || '—';
+  document.getElementById('ps-tier').textContent = tier.name ? tier.name + ' (' + tier.duration + ')' : '—';
+  document.getElementById('ps-amount').textContent = isInternational ? 'To be confirmed (EUR)' : (tier.label || '—');
+  document.getElementById('intl-payment-note').style.display = isInternational ? 'block' : 'none';
+  document.getElementById('paymentMethods').style.display = isInternational ? 'none' : 'block';
+}
+
+// ─── COLLECT DATA ─────────────────────────────────────────────────────────────
+function collectData() {
+  return {
+    timestamp: new Date().toISOString(),
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    dob: document.getElementById('dob').value,
+    gender: document.getElementById('gender').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    city: document.getElementById('city').value,
+    country: document.getElementById('country').value,
+    qualification: document.getElementById('qualification').value,
+    fieldOfStudy: document.getElementById('fieldOfStudy').value,
+    institution: document.getElementById('institution').value,
+    gradYear: document.getElementById('gradYear').value,
+    employment: document.getElementById('employment').value,
+    tier: selectedTier,
+    interest: document.getElementById('interest').value,
+    source: document.getElementById('source').value,
+    motivation: document.getElementById('motivation').value,
+    skills: document.getElementById('skills').value,
+    outcome: document.getElementById('outcome').value,
+    international: isInternational,
+    paymentMethod: isInternational ? 'international-pending' : selectedPayMethod,
+    programme: 'Graduate Learning Program'
+  };
+}
+
+async function sendToSheet(data) {
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(e) { console.error('Sheet error:', e); }
+}
+
+// ─── SUBMIT ───────────────────────────────────────────────────────────────────
+function submitForm() {
+  const data = collectData();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+  if (isInternational) {
+    // Save to sheet, show success with "team will contact you" message
+    sendToSheet(data).then(() => {
+      document.getElementById('successMessage').innerHTML =
+        'Thank you for applying to the Elevate Graduate Learning Program. Because you are an international participant, our team will <strong>contact you within 2 working days</strong> to confirm your EUR pricing and send your payment link. You will also receive a confirmation email shortly.';
+      goStep(5);
+    });
+    return;
+  }
+
+  if (selectedPayMethod === 'bank') {
+    data.paymentStatus = 'Awaiting Bank Transfer';
+    sendToSheet(data).then(() => { goStep(5); });
+    return;
+  }
+
+  // Paystack
+  const tier = TIERS[selectedTier] || {};
+  const handler = PaystackPop.setup({
+    key: PAYSTACK_KEY,
+    email: data.email,
+    amount: (tier.price || 0) * 100, // in pesewas
+    currency: 'GHS',
+    ref: 'GLP-' + Date.now(),
+    metadata: { name: data.firstName + ' ' + data.lastName, tier: selectedTier, programme: 'Graduate' },
+    callback: function(response) {
+      data.paystackRef = response.reference;
+      data.paymentStatus = 'Paid';
+      sendToSheet(data).then(() => { goStep(5); });
+    },
+    onClose: function() {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-lock"></i> Complete Enrolment';
+    }
+  });
+  handler.openIframe();
+}
+</script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+</html>

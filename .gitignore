@@ -1,0 +1,9 @@
+node_modules
+.env*
+!.env.example
+.next
+
+.DS_Store
+*.tsbuildinfo
+.agents
+.claude

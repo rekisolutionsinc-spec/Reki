@@ -1,0 +1,275 @@
+<!-- ═══════════════════════════════════════════════
+     RUN FOR CHANGE 2026 — FLOATING AD STICKER
+     Drop this snippet just before </body> on any page
+     (index.html, blog, impact, programmes, etc.)
+     ═══════════════════════════════════════════════ -->
+
+<style>
+/* ── STICKER WIDGET ──────────────────────────────── */
+#r4c-sticker {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  font-family: 'Blauer Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* CLOSE BUTTON */
+#r4c-sticker-close {
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px; height: 22px;
+  font-size: .65rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  align-self: flex-end;
+  margin-bottom: -4px;
+  transition: background .2s;
+  line-height: 1;
+}
+#r4c-sticker-close:hover { background: rgba(0,0,0,.6); }
+
+/* CARD */
+#r4c-sticker-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(43,43,136,.22), 0 2px 8px rgba(0,0,0,.1);
+  overflow: hidden;
+  width: 280px;
+  animation: r4cSlideIn .4s cubic-bezier(.16,1,.3,1) both;
+  border: 1px solid rgba(43,43,136,.08);
+}
+@keyframes r4cSlideIn {
+  from { opacity: 0; transform: translateY(24px) scale(.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* TOP BAND */
+#r4c-sticker-top {
+  background: linear-gradient(135deg, #2b2b88 0%, #1a1a55 100%);
+  padding: 14px 16px 12px;
+  position: relative;
+  overflow: hidden;
+}
+#r4c-sticker-top::before {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: rgba(255,102,51,.18);
+  border-radius: 50%;
+}
+#r4c-sticker-eyebrow {
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+#r4c-sticker-eyebrow i { color: #ff6633; font-size: .65rem; }
+#r4c-sticker-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+#r4c-sticker-title em { font-style: normal; color: #ff6633; }
+
+/* BADGE */
+#r4c-sticker-badge {
+  position: absolute;
+  top: 10px; right: 14px;
+  background: #ff6633;
+  border-radius: 50%;
+  width: 46px; height: 46px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  box-shadow: 0 4px 12px rgba(255,102,51,.45);
+}
+#r4c-sticker-badge .b-num { font-size: 1.1rem; font-weight: 900; line-height: 1; }
+#r4c-sticker-badge .b-lbl { font-size: .38rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; line-height: 1.3; }
+
+/* BODY */
+#r4c-sticker-body {
+  padding: 12px 16px 14px;
+}
+#r4c-sticker-meta {
+  display: flex; flex-direction: column; gap: 5px;
+  margin-bottom: 12px;
+}
+.r4c-s-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .78rem; color: #5a5a72;
+}
+.r4c-s-row i { color: #2b2b88; width: 12px; font-size: .72rem; flex-shrink: 0; }
+.r4c-s-row strong { color: #1c1c2e; }
+
+/* COUNTDOWN */
+#r4c-sticker-countdown {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px;
+  background: #f5f6fa;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+}
+.r4c-sc-item { text-align: center; }
+.r4c-sc-num {
+  display: block;
+  font-size: .95rem; font-weight: 900;
+  color: #2b2b88; line-height: 1;
+}
+.r4c-sc-lbl {
+  font-size: .52rem; text-transform: uppercase;
+  letter-spacing: 1px; color: #9e9eb8;
+  font-weight: 600;
+}
+.r4c-sc-sep {
+  font-size: .9rem; color: #c4c4d8;
+  font-weight: 700; padding-bottom: 10px;
+}
+
+/* BUTTON */
+#r4c-sticker-btn {
+  display: block; width: 100%;
+  background: #ff6633; color: #fff;
+  border: none; border-radius: 7px;
+  padding: 11px 0;
+  font-size: .82rem; font-weight: 800;
+  text-align: center; text-decoration: none;
+  letter-spacing: .5px; text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255,102,51,.38);
+  transition: background .2s, transform .15s, box-shadow .2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+#r4c-sticker-btn:hover {
+  background: #e05520;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,102,51,.48);
+}
+
+/* PULSE DOT */
+#r4c-sticker-live {
+  display: flex; align-items: center; gap: 5px;
+  font-size: .68rem; color: #5a5a72;
+  justify-content: center; margin-top: 8px;
+}
+.r4c-live-dot {
+  width: 7px; height: 7px;
+  background: #4caf50; border-radius: 50%;
+  animation: r4cPulse2 2s infinite;
+}
+@keyframes r4cPulse2 {
+  0%,100% { box-shadow: 0 0 0 0 rgba(76,175,80,.4); }
+  50%     { box-shadow: 0 0 0 5px rgba(76,175,80,0); }
+}
+
+/* MINIMISED BUBBLE (shown after dismiss) */
+#r4c-sticker-bubble {
+  display: none;
+  background: #ff6633;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-size: .78rem; font-weight: 800;
+  letter-spacing: .5px; text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255,102,51,.45);
+  align-items: center; gap: 8px;
+  animation: r4cSlideIn .3s ease both;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#r4c-sticker-bubble:hover { background: #e05520; }
+
+/* MOBILE */
+@media (max-width: 480px) {
+  #r4c-sticker { bottom: 16px; right: 16px; left: 16px; align-items: stretch; }
+  #r4c-sticker-card { width: 100%; }
+  #r4c-sticker-bubble { justify-content: center; }
+}
+</style>
+
+<!-- MARKUP -->
+<div id="r4c-sticker">
+  <button id="r4c-sticker-close" onclick="r4cMinimise()" title="Close">✕</button>
+  <div id="r4c-sticker-card">
+
+    <div id="r4c-sticker-top">
+      <div id="r4c-sticker-badge">
+        <span class="b-num">5</span>
+        <span class="b-lbl">Year<br>Run</span>
+      </div>
+      <div id="r4c-sticker-eyebrow"><i class="fas fa-running"></i> 5th Anniversary · Accra</div>
+      <p id="r4c-sticker-title"><em>Run</em> for Change 2026</p>
+    </div>
+
+    <div id="r4c-sticker-body">
+      <div id="r4c-sticker-meta">
+        <div class="r4c-s-row"><i class="fas fa-calendar-alt"></i> <span><strong>26 Sept 2026</strong> &nbsp;·&nbsp; 8:00 AM</span></div>
+        <div class="r4c-s-row"><i class="fas fa-route"></i> <span>Shiashie → Legon, Accra</span></div>
+      </div>
+
+      <div id="r4c-sticker-countdown">
+        <div class="r4c-sc-item"><span class="r4c-sc-num" id="sc-d">--</span><span class="r4c-sc-lbl">Days</span></div>
+        <div class="r4c-sc-sep">:</div>
+        <div class="r4c-sc-item"><span class="r4c-sc-num" id="sc-h">--</span><span class="r4c-sc-lbl">Hrs</span></div>
+        <div class="r4c-sc-sep">:</div>
+        <div class="r4c-sc-item"><span class="r4c-sc-num" id="sc-m">--</span><span class="r4c-sc-lbl">Min</span></div>
+        <div class="r4c-sc-sep">:</div>
+        <div class="r4c-sc-item"><span class="r4c-sc-num" id="sc-s">--</span><span class="r4c-sc-lbl">Sec</span></div>
+      </div>
+
+      <a href="r4c-registration.html" id="r4c-sticker-btn">
+        <i class="fas fa-running"></i> Register Now
+      </a>
+
+      <div id="r4c-sticker-live">
+        <div class="r4c-live-dot"></div>
+        Registrations open
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimised pill shown after closing -->
+  <a href="r4c-registration.html" id="r4c-sticker-bubble">
+    <i class="fas fa-running"></i> Run for Change, Register
+  </a>
+</div>
+
+<script>
+(function() {
+  // Countdown
+  var target = new Date('2026-09-26T08:00:00+00:00');
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) { document.getElementById('r4c-sticker-countdown').innerHTML = '<span style="font-size:.78rem;font-weight:700;color:#2b2b88">Event Day Is Here!</span>'; return; }
+    var pad = function(n) { return String(Math.floor(n)).padStart(2,'0'); };
+    document.getElementById('sc-d').textContent = pad(diff / 864e5);
+    document.getElementById('sc-h').textContent = pad((diff % 864e5) / 36e5);
+    document.getElementById('sc-m').textContent = pad((diff % 36e5) / 6e4);
+    document.getElementById('sc-s').textContent = pad((diff % 6e4) / 1e3);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Minimise / restore
+  window.r4cMinimise = function() {
+    document.getElementById('r4c-sticker-card').style.display = 'none';
+    document.getElementById('r4c-sticker-close').style.display = 'none';
+    var b = document.getElementById('r4c-sticker-bubble');
+    b.style.display = 'flex';
+  };
+})();
+</script>
+<!-- ═══ END R4C STICKER ═══════════════════════════ -->

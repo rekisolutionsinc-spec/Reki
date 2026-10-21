@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevate Hub  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/elevate.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Favicon -->
+        <link href="/img/favicon.png" rel="icon">
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<div class="eh-hero">
+  <img src="/img/DSC09605.jpg" alt="Elevate Hub" />
+</div>
+<div class="eh-hero-caption">
+  <i class="fas fa-quote-left"></i>
+  <p>"We don't just spark curiosity, we ignite possibilities. Elevate Hub is where potential meets opportunity."</p>
+</div>
+
+<div class="eh-body">
+  <aside class="eh-sidebar">
+    <a href="programs.html" class="eh-back"><i class="fas fa-arrow-left"></i> All Programs</a>
+    <div class="eh-acc-header" onclick="this.classList.toggle('collapsed')">
+      About The Hub <i class="fas fa-chevron-down chevron"></i>
+    </div>
+    <div class="eh-nav">
+      <div class="eh-nav-item active" onclick="ehShow('pane-overview');ehNavActive(this)">Overview <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="eh-nav-item" onclick="ehShow('pane-challenge');ehNavActive(this)">Challenge <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="eh-nav-item" onclick="ehShow('pane-programs');ehNavActive(this)">Our Programs <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="eh-nav-item" onclick="ehShow('pane-impact');ehNavActive(this)">Impact <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="eh-nav-item" onclick="ehShow('pane-volunteer');ehNavActive(this)">Volunteer <i class="fas fa-chevron-right arrow"></i></div>
+      <a class="eh-nav-donate" href="https://paystack.shop/pay/oh2bqa2xdw">Donate</a>
+    </div>
+  </aside>
+
+  <main class="eh-content">
+    <div class="eh-pane active" id="pane-overview">
+      <div class="eh-quote">
+        <div class="eh-quotemark">"</div>
+        <blockquote>"The richest place on earth is the cemetery, because it holds untapped genius. We refuse to allow Ghana's brightest minds to fade unnoticed."</blockquote>
+        <cite>Inspired by Myles Munroe, adopted by Spursbase Foundation</cite>
+      </div>
+      <h2>What is Elevate Hub?</h2>
+      <p>Elevate Hub is Spursbase Foundation's transformative learning and skills development centre. We exist to bridge the gap between education and employability, providing young people with access to quality learning, TVET (Technical and Vocational Education and Training), and personal development opportunities.</p>
+      <p>Our training approach combines academic enrichment, creativity, innovation, and life skills to prepare students and young people for a productive and purposeful future. Elevate Hub serves as a community resource, open to vulnerable children seeking skills, volunteers seeking structured engagement, and young people ready to elevate their potential.</p>
+      <div class="eh-pills">
+        <div class="eh-pill"><i class="fas fa-tools"></i> Skills Training</div>
+        <div class="eh-pill"><i class="fas fa-laptop-code"></i> Digital Skills</div>
+        <div class="eh-pill"><i class="fas fa-graduation-cap"></i> Graduate Program</div>
+        <div class="eh-pill"><i class="fas fa-hands-helping"></i> Volunteer Program</div>
+        <div class="eh-pill"><i class="fas fa-lightbulb"></i> Innovation</div>
+        <div class="eh-pill"><i class="fas fa-user-tie"></i> Employability</div>
+      </div>
+    </div>
+
+    <div class="eh-pane" id="pane-challenge">
+      <h2>The Challenge</h2>
+      <p>Across Ghana's underserved communities, the gap between education and employment is wide. Children complete school without marketable skills; young people graduate without pathways to work. Without access to skills training, talent goes untapped and potential remains locked.</p>
+      <div class="eh-callout">
+        <h4>Education Without Employability</h4>
+        <p>Many children in marginalised communities complete their basic education without acquiring practical skills that enable economic independence. The result is a generation ready to learn but without the tools to build productive futures.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>Limited Access to TVET</h4>
+        <p>Technical and Vocational Education and Training remains inaccessible for many young people from low-income backgrounds, either too far away, too expensive, or too disconnected from community realities.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>Volunteers Without Structure</h4>
+        <p>Many passionate individuals want to contribute to community development but lack structured opportunities. Elevate Hub creates pathways for volunteers to contribute meaningfully while also growing their own skills and experience.</p>
+      </div>
+    </div>
+
+    <div class="eh-pane" id="pane-programs">
+      <h2>Our Programs</h2>
+      <p>Elevate Hub runs three connected programmes that together serve vulnerable children, young graduates, and passionate volunteers.</p>
+      <div class="eh-proj-grid">
+        <div class="eh-proj-card">
+          <div class="eh-proj-card-img"><img src="/img/DSC09605.jpg" alt="Elevate Skills Training" /></div>
+          <div class="eh-proj-card-body">
+            <h3>Elevate Skills Training</h3>
+            <p>The Spursbase Skills Hub provides vulnerable children and young people with access to TVET, digital skills, creativity, and life skills training, bridging the gap between education and employability in underserved communities.</p>
+            <span class="eh-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="eh-proj-card">
+          <div class="eh-proj-card-img"><img src="/img/DSC04221.jpg" alt="Elevate Graduate Program" /></div>
+          <div class="eh-proj-card-body">
+            <h3>Elevate Graduate Program</h3>
+            <p>A structured development pathway for young graduates, combining mentorship, practical experience, and career readiness support to help young people transition from education into meaningful employment and leadership.</p>
+            <span class="eh-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="eh-proj-card">
+          <div class="eh-proj-card-img"><img src="/img/IMG_0170.jpg" alt="Volunteer Program" /></div>
+          <div class="eh-proj-card-body">
+            <h3>Volunteer Program</h3>
+            <p>Connecting passionate individuals to structured volunteer opportunities within Spursbase Foundation's programmes, from education outreach and health awareness to community events and digital support, on-site or remotely.</p>
+            <span class="eh-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eh-pane" id="pane-impact">
+      <h2>Our Impact</h2>
+      <div class="eh-callout">
+        <h4>650 Girls Reached Through Digital Skills</h4>
+        <p>Girls in ICT Day at Awudome SHS engaged 650 girls with hands-on digital skills exposure and career awareness, demonstrating what Elevate Hub's skills training model can achieve at scale.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>70 Students, Rural Innovation Challenge</h4>
+        <p>The Rural Community Innovation Challenge at Mafi Wudzrolo engaged 70 students in hands-on problem-solving, building creativity, teamwork, and entrepreneurship mindsets that form the foundation of Elevate Hub's approach.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>110% Growth in One Year</h4>
+        <p>Spursbase Foundation achieved 110% growth in 2025, driven in part by expanding skills and volunteer programming that amplified the reach and impact of every other programme area.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>Volunteer Network Growing</h4>
+        <p>Our structured volunteer programme is building a growing community of purpose-driven individuals committed to creating opportunity, restoring dignity, and contributing to Ghana's next generation of leaders.</p>
+      </div>
+    </div>
+
+    <div class="eh-pane" id="pane-volunteer">
+      <h2>Volunteer With Us</h2>
+      <p>Do you want to make a meaningful difference in your community and beyond? Spursbase Foundation invites passionate, purpose-driven individuals to join our Volunteer Program and be part of lasting change.</p>
+      <div class="eh-callout">
+        <h4>What You'll Do</h4>
+        <p>Support grassroots education and child advocacy initiatives. Gain hands-on experience in community engagement, social impact, and life skills empowerment. Participate in educational outreach, health and wellbeing activities, mentorship sessions, and community events.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>Commitment</h4>
+        <p>Whether you are available for four weeks or up to one year, your time, skills, and commitment can help empower children, strengthen communities, and advance equitable access to education. Volunteers may join on-site or remotely, depending on availability, skills, and programme needs.</p>
+      </div>
+      <div class="eh-callout">
+        <h4>How to Apply</h4>
+        <p>Send your CV and a motivation letter to: volunteer@spursbasefoundation.org. A volunteer contribution of €300 applies to support programme coordination, training, and logistics (terms and conditions apply).</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section class="eh-news">
+  <div class="eh-news-inner">
+    <div class="eh-news-label">Latest from Elevate Hub</div>
+    <div class="eh-news-grid">
+      <div class="eh-news-card">
+        <img src="/img/DSC09605.jpg" alt="" />
+        <div class="eh-news-card-body">
+          <div class="eh-news-date">June 5, 2025</div>
+          <h3>Girls in ICT Day, 650 Girls Experience Technology as Future Creators at Awudome SHS</h3>
+        </div>
+      </div>
+      <div class="eh-news-card">
+        <img src="/img/DSC04221.jpg" alt="" />
+        <div class="eh-news-card-body">
+          <div class="eh-news-date">March 21, 2025</div>
+          <h3>Rural Innovation Challenge, Dzidefo's Robotics Dream at Mafi Wudzrolo</h3>
+        </div>
+      </div>
+      <div class="eh-news-card">
+        <img src="/img/IMG_0170.jpg" alt="" />
+        <div class="eh-news-card-body">
+          <div class="eh-news-date">January 2025</div>
+          <h3>Join Us, Spursbase Foundation Launches Volunteer Engagement Programme for 2025</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<my-footer></my-footer>
+<script>
+  function ehShow(id){document.querySelectorAll('.eh-pane').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+  function ehNavActive(el){document.querySelectorAll('.eh-nav-item').forEach(n=>n.classList.remove('active'));el.classList.add('active');}
+</script>
+</body>
+</html>

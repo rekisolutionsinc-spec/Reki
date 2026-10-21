@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/donation.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="/img/favicon.png" rel="icon" />
+</head>
+<body>
+
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- HERO -->
+<section class="don-hero" style="background-image:url('/img/IMG_0091.jpg')">
+  <div class="don-hero-inner">
+    <h1>Give a Child <em>a Future</em></h1>
+    <p>Your contribution however small puts education, health, and hope within reach of children in underserved communities across Ghana.</p>
+    <div class="don-hero-stats">
+      <div class="don-hs-item"><strong>1,000+</strong><span>Children Reached</span></div>
+      <div class="don-hs-div"></div>
+      <div class="don-hs-item"><strong>110%</strong><span>Growth in 2025</span></div>
+      <div class="don-hs-div"></div>
+      <div class="don-hs-item"><strong>50+</strong><span>Global Partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="don-breadcrumb">
+  <a href="index.html">Home</a> &rsaquo; <span>Donate</span>
+</div>
+
+<!-- MAIN BODY -->
+<section class="don-body">
+  <div class="don-inner">
+
+    <!-- LEFT: FORM -->
+    <div class="don-form-col">
+
+      <!-- FREQUENCY -->
+      <div class="don-card">
+        <div class="don-card-title"><i class="fas fa-sync-alt"></i> Donation Frequency</div>
+        <div class="don-freq-tabs">
+          <button type="button" class="don-freq-tab active" onclick="setFreq(this,'once')">Give Once</button>
+          <button type="button" class="don-freq-tab" onclick="setFreq(this,'monthly')">Monthly</button>
+          <button type="button" class="don-freq-tab" onclick="setFreq(this,'annually')">Annually</button>
+        </div>
+        <p class="don-freq-note" id="freqNote">A one-time gift helps us respond to immediate needs in the community.</p>
+      </div>
+
+      <!-- AMOUNT -->
+      <div class="don-card">
+        <div class="don-card-title"><i class="fas fa-coins"></i> Choose an Amount</div>
+
+        <!-- Currency -->
+        <div class="don-currency-row">
+          <button type="button" class="don-cur-btn active" onclick="setCurrency(this,'GHS','GH₵',50,100,250,500,1000)">GHS</button>
+          <button type="button" class="don-cur-btn" onclick="setCurrency(this,'USD','$',10,25,50,100,250)">USD</button>
+          <button type="button" class="don-cur-btn" onclick="setCurrency(this,'GBP','£',10,20,50,100,200)">GBP</button>
+          <button type="button" class="don-cur-btn" onclick="setCurrency(this,'EUR','€',10,25,50,100,250)">EUR</button>
+        </div>
+
+        <!-- Amount buttons — type="button" prevents any form interference -->
+        <div class="don-amounts">
+          <button type="button" class="don-amt-btn" id="amt0" onclick="selectAmt(this,0)">GH₵50</button>
+          <button type="button" class="don-amt-btn" id="amt1" onclick="selectAmt(this,1)">GH₵100</button>
+          <button type="button" class="don-amt-btn don-amt-popular" id="amt2" onclick="selectAmt(this,2)">GH₵250</button>
+          <button type="button" class="don-amt-btn" id="amt3" onclick="selectAmt(this,3)">GH₵500</button>
+          <button type="button" class="don-amt-btn" id="amt4" onclick="selectAmt(this,4)">GH₵1,000</button>
+          <button type="button" class="don-amt-btn don-amt-other" onclick="showCustom()">Other</button>
+        </div>
+
+        <!-- Popular badge rendered as sibling, not ::after — avoids click blocking -->
+        <div class="don-popular-label" id="popularLabel"> Popular choice</div>
+
+        <div class="don-custom-row" id="customRow" style="display:none">
+          <label>Enter amount (<span id="symLabel">GH₵</span>)</label>
+          <input type="number" id="customAmt" placeholder="Enter custom amount" min="1" oninput="setCustom(this.value)" />
+        </div>
+        <div class="don-impact-hint" id="impactHint"></div>
+      </div>
+
+      <!-- DONOR DETAILS -->
+      <div class="don-card">
+        <div class="don-card-title"><i class="fas fa-user"></i> Your Details</div>
+        <div class="don-field-row">
+          <div class="don-field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" id="donFirst" placeholder="First Name" />
+          </div>
+          <div class="don-field">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" id="donLast" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="don-field-row">
+          <div class="don-field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="donEmail" placeholder="email@example.com" />
+          </div>
+          <div class="don-field">
+            <label>Phone (optional)</label>
+            <input type="tel" id="donPhone" placeholder="+233 XX XXX XXXX" />
+          </div>
+        </div>
+        <div class="don-field-row">
+          <div class="don-field don-field-full">
+            <label>Donation Type</label>
+            <select id="donationType">
+              <option value="general">General Support</option>
+              <option value="education">Education</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="community">Community &amp; Family Support</option>
+            </select>
+          </div>
+        </div>
+        <div class="don-field-row">
+          <div class="don-field don-field-full">
+            <label>Dedicate this gift (optional)</label>
+            <input type="text" id="donDedicate" placeholder="e.g. In memory of… / In honour of…" />
+          </div>
+        </div>
+        <label class="don-anon-label">
+          <input type="checkbox" id="donAnon" /> Donate anonymously
+        </label>
+      </div>
+
+      <!-- PAY -->
+      <div class="don-card don-pay-card">
+        <div class="don-summary-row">
+          <div>
+            <div class="don-summary-label">Donation total</div>
+            <div class="don-summary-freq" id="summaryFreq">One-time gift</div>
+          </div>
+          <div class="don-summary-amount" id="summaryAmt">—</div>
+        </div>
+        <label class="don-agree-label">
+          <input type="checkbox" id="donAgree" onchange="updatePayBtn()" />
+          I agree to make this donation <span class="req">*</span>
+        </label>
+        <button type="button" class="don-pay-btn" id="donPayBtn" onclick="submitDonation()" disabled>
+          <i class="fas fa-heart"></i> Donate Now
+        </button>
+        <div class="don-secure-note">
+          <i class="fas fa-lock"></i> Secured by Paystack &nbsp;·&nbsp;
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          &nbsp; Mobile Money accepted
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: SIDEBAR -->
+    <div class="don-sidebar">
+
+      <div class="don-photo-card" style="background-image:url('/img/IMG_0105.jpg')">
+        <div class="don-photo-overlay">
+          <div class="don-photo-quote">"Every child deserves a future worth looking forward to."</div>
+          <div class="don-photo-attr">Spursbase Foundation</div>
+        </div>
+      </div>
+
+      <div class="don-sidebar-card don-impact-card">
+        <div class="don-sc-title"><i class="fas fa-bolt"></i> Your Impact</div>
+        <div class="don-impact-list">
+          <div class="don-impact-item">
+            <div class="don-impact-icon"><i class="fas fa-book"></i></div>
+            <div><strong>GH₵50</strong><span>School supplies for one child for a term</span></div>
+          </div>
+          <div class="don-impact-item">
+            <div class="don-impact-icon"><i class="fas fa-stethoscope"></i></div>
+            <div><strong>GH₵100</strong><span>Health screening for 5 children</span></div>
+          </div>
+          <div class="don-impact-item">
+            <div class="don-impact-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div><strong>GH₵250</strong><span>One child's school fees for a month</span></div>
+          </div>
+          <div class="don-impact-item">
+            <div class="don-impact-icon"><i class="fas fa-home"></i></div>
+            <div><strong>GH₵500</strong><span>Community outreach session for 20 families</span></div>
+          </div>
+          <div class="don-impact-item">
+            <div class="don-impact-icon"><i class="fas fa-star"></i></div>
+            <div><strong>GH₵1,000+</strong><span>Full term of the Elevate programme for one child</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="don-sidebar-card don-chosen-card">
+        <div class="don-sc-title"><i class="fas fa-child"></i> Sponsor a Specific Child</div>
+        <p>The Chosen Project lets you personally choose a child to champion with direct, ongoing support.</p>
+        <a href="chosen.html" class="don-chosen-btn">
+          Learn About The Chosen Project <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANK & MOBILE MONEY -->
+<section class="bank-details-section">
+  <div class="bank-inner">
+    <div class="bank-intro">
+      <div class="bank-section-label">Alternative Payment</div>
+      <h3>Bank &amp; Mobile Money Details</h3>
+      <p>Prefer to give directly? Transfer to any of the accounts below, then email <a href="mailto:info@spursbasefoundation.org">info@spursbasefoundation.org</a> with your receipt.</p>
+    </div>
+    <div class="bank-cards">
+      <div class="bank-card">
+        <div class="bank-card-icon"><i class="fas fa-university"></i></div>
+        <h4>Bank Transfer</h4>
+        <div class="bank-detail-row"><span>Account Name</span><strong>SPURSBASE FOUNDATION LBG</strong></div>
+        <div class="bank-detail-row"><span>Account No.</span><strong>904 001 413 7615</strong></div>
+        <div class="bank-detail-row"><span>Bank</span><strong>Stanbic Bank</strong></div>
+        <div class="bank-detail-row"><span>Branch</span><strong>East Legon</strong></div>
+      </div>
+      <div class="bank-card">
+        <div class="bank-card-icon don-momo-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h4>MTN Mobile Money</h4>
+        <div class="bank-detail-row"><span>Account Name</span><strong>Spursbase Foundation (LBG)</strong></div>
+        <div class="bank-detail-row"><span>MoMo Number</span><strong>053 885 4383</strong></div>
+        <div class="bank-detail-row"><span>Network</span><strong>MTN Ghana</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="don-trust">
+  <div class="don-trust-inner">
+    <div class="don-trust-item"><i class="fas fa-shield-alt"></i><span>Secure Payments</span></div>
+    <div class="don-trust-item"><i class="fas fa-file-alt"></i><span>Annual Reports Published</span></div>
+    <div class="don-trust-item"><i class="fas fa-envelope-open-text"></i><span>Gift Acknowledgement Sent</span></div>
+    <div class="don-trust-item"><i class="fas fa-globe-africa"></i><span>SDG-Aligned Programmes</span></div>
+    <div class="don-trust-item"><i class="fas fa-child"></i><span>1,000+ Children Reached</span></div>
+  </div>
+</section>
+
+<!-- SUCCESS OVERLAY -->
+<div class="don-success-overlay" id="donSuccess" style="display:none">
+  <div class="don-success-box">
+    <div class="don-success-icon"><i class="fas fa-heart"></i></div>
+    <h2>Thank You!</h2>
+    <p id="successMsg">Your generous donation has been received. A thank-you email is on its way.</p>
+    <a href="index.html" class="don-success-btn">Return to Home <i class="fas fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<my-footer></my-footer>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+// ── CONFIG ────────────────────────────────────────────
+const SHEET_URL    = 'https://script.google.com/macros/s/AKfycbxt4T7l7KQ2XYJXxOfNniOOqAC72ZiugfaRqXoci09czbpOPXguywLV6dFkZMRTuhz3eg/exec';
+const PAYSTACK_KEY = 'pk_live_7d657719203b1deb733fd76deeb612de0704513f'; // replace with pk_live_...
+
+// ── STATE ─────────────────────────────────────────────
+let currency    = 'GHS';
+let symbol      = 'GH₵';
+let amountList  = [50, 100, 250, 500, 1000];
+let selectedIdx = -1;
+let customVal   = 0;
+let frequency   = 'once';
+
+const freqLabels = { once: 'One-time gift', monthly: 'Monthly giving', annually: 'Annual giving' };
+const impactMap  = [
+  'Provides school supplies for one child for a term.',
+  'Funds a health screening for 5 children.',
+  "Sponsors one child's school fees for a month.",
+  'Supports a community outreach session for 20 families.',
+  'Fully sponsors one term of the Elevate programme.'
+];
+
+function currentAmount() {
+  return selectedIdx >= 0 ? amountList[selectedIdx] : customVal;
+}
+
+// ── FREQUENCY ─────────────────────────────────────────
+function setFreq(btn, f) {
+  document.querySelectorAll('.don-freq-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  frequency = f;
+  const notes = {
+    once:     'A one-time gift helps us respond to immediate needs in the community.',
+    monthly:  'Monthly giving provides predictable support so we can plan long-term programmes.',
+    annually: 'An annual gift makes a significant difference and qualifies for our partnership acknowledgement.'
+  };
+  document.getElementById('freqNote').textContent = notes[f];
+  document.getElementById('summaryFreq').textContent = freqLabels[f];
+  updateSummary();
+}
+
+// ── CURRENCY ──────────────────────────────────────────
+function setCurrency(btn, code, sym, a0, a1, a2, a3, a4) {
+  document.querySelectorAll('.don-cur-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currency = code; symbol = sym;
+  amountList = [a0, a1, a2, a3, a4];
+  document.getElementById('symLabel').textContent = sym;
+  ['amt0','amt1','amt2','amt3','amt4'].forEach((id, i) => {
+    document.getElementById(id).textContent = sym + amountList[i].toLocaleString();
+  });
+  selectedIdx = -1;
+  document.querySelectorAll('.don-amt-btn').forEach(b => b.classList.remove('active'));
+  customVal = 0;
+  document.getElementById('popularLabel').style.display = 'none';
+  updateSummary();
+}
+
+// ── AMOUNT SELECTION ──────────────────────────────────
+function selectAmt(btn, idx) {
+  document.querySelectorAll('.don-amt-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedIdx = idx;
+  document.getElementById('customRow').style.display = 'none';
+  document.getElementById('impactHint').textContent = impactMap[idx] || '';
+  // Show popular label under the GH₵250 button (index 2)
+  const pop = document.getElementById('popularLabel');
+  pop.style.display = idx === 2 ? 'block' : 'none';
+  updateSummary();
+}
+
+function showCustom() {
+  document.querySelectorAll('.don-amt-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.don-amt-other').classList.add('active');
+  document.getElementById('customRow').style.display = 'flex';
+  document.getElementById('popularLabel').style.display = 'none';
+  selectedIdx = -1; customVal = 0;
+  document.getElementById('impactHint').textContent = '';
+  updateSummary();
+}
+
+function setCustom(val) {
+  customVal = parseFloat(val) || 0;
+  document.getElementById('impactHint').textContent = customVal > 0 ? 'Every gift makes a real difference. Thank you.' : '';
+  updateSummary();
+}
+
+function updateSummary() {
+  const amt = currentAmount();
+  document.getElementById('summaryAmt').textContent = amt > 0 ? symbol + amt.toLocaleString() : '—';
+  updatePayBtn();
+}
+
+function updatePayBtn() {
+  const agreed = document.getElementById('donAgree').checked;
+  const amt    = currentAmount();
+  document.getElementById('donPayBtn').disabled = !(agreed && amt > 0);
+}
+
+// ── SUBMIT ────────────────────────────────────────────
+function submitDonation() {
+  const first = document.getElementById('donFirst').value.trim();
+  const last  = document.getElementById('donLast').value.trim();
+  const email = document.getElementById('donEmail').value.trim();
+
+  if (!first || !last) { alert('Please enter your first and last name.'); return; }
+  if (!email)          { alert('Please enter your email address.'); return; }
+
+  const amt = currentAmount();
+  if (!amt || amt <= 0) { alert('Please select or enter a donation amount.'); return; }
+
+  const handler = PaystackPop.setup({
+    key:      PAYSTACK_KEY,
+    email:    email,
+    amount:   Math.round(amt * 100),
+    currency: currency,
+    ref:      'DON-' + Date.now(),
+    metadata: {
+      name:         first + ' ' + last,
+      phone:        document.getElementById('donPhone').value,
+      dedication:   document.getElementById('donDedicate').value,
+      anonymous:    document.getElementById('donAnon').checked,
+      donationType: document.getElementById('donationType').value,
+      frequency:    frequency
+    },
+    callback: function(response) {
+      // Record to Google Sheet + trigger thank-you email
+      const donationData = {
+        reference:    response.reference,
+        name:         first + ' ' + last,
+        email:        email,
+        phone:        document.getElementById('donPhone').value,
+        amount:       amt,
+        currency:     currency,
+        symbol:       symbol,
+        frequency:    frequency,
+        donationType: document.getElementById('donationType').value,
+        dedication:   document.getElementById('donDedicate').value,
+        anonymous:    document.getElementById('donAnon').checked ? 'Yes' : 'No'
+      };
+
+      fetch(SHEET_URL, {
+        method:   'POST',
+        body:     JSON.stringify(donationData),
+        redirect: 'follow'
+      })
+      .then(r => r.json())
+      .then(res => console.log('Donation recorded:', res))
+      .catch(err => console.error('Record error:', err));
+
+      // Show success overlay
+      document.getElementById('successMsg').textContent =
+        'Thank you, ' + first + '! Your ' + symbol + amt.toLocaleString() +
+        ' donation (ref: ' + response.reference + ') has been received. ' +
+        'A warm thank-you email is on its way to ' + email + '.';
+      document.getElementById('donSuccess').style.display = 'flex';
+    },
+    onClose: function() {}
+  });
+  handler.openIframe();
+}
+</script>
+
+</body>
+</html>

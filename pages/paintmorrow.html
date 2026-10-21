@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paint Tomorrow - Spursbase Foundation Fundraiser</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+   <link rel="stylesheet" href="/css/css/header.css" />
+   <link rel="stylesheet" href="/css/css/footer.css" />
+   <!-- <link rel="stylesheet" href="/css/css/home.css" /> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <!-- Favicon -->
+    <link href="/img/favicon.png" rel="icon">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+  <link href="https://fonts.googleapis.com/css2?family=Blauer+Nue:wght@300;400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Button Styles */
+    .btn-orange {
+      background-color: #ff6633;
+      color: white;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-orange:hover {
+      background-color: #e65c2a;
+    }
+    /* General Container Styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Section Headers */
+    h2 {
+      color: #333399;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: none;
+      padding-bottom: 0;
+     overflow: hidden; /* Ensure the zoom effect doesn't overflow */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/img/DSC00190.jpg') center center/cover no-repeat;
+  animation: zoomInOut 10s infinite alternate; /* Apply the zoom animation */
+  z-index: 1;
+}
+  /* Hero Section */
+  .hero-section {
+    height: 75vh;
+    background: url('/img/DSC00190.jpg') center center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 0 0 0 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white; /* Change the color to white */
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .hero-content .btn-primary {
+    background: #ff6633;
+    padding: 16px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 6px 10px rgba(224, 104, 0, 0.6);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    z-index: 3;  /* Ensure button is above overlay */
+    position: relative;
+  }
+
+  .hero-content .btn-primary:hover {
+    background: #ff6633;
+    text-decoration-thickness: 2px; /* Make the underline thicker */
+    text-decoration-color: white; /* Change underline color to white */
+
+  }
+  @media (max-width: 768px) {
+  .hero-content .btn-primary {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}
+
+
+/* Keyframes for Zoom Effect */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Zoom in slightly */
+  }
+  100% {
+    transform: scale(1); /* Zoom back out */
+  }
+}
+
+  .campaign-section {
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+    /* Objectives List */
+    ul.objectives {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    ul.objectives li {
+      margin-bottom: 10px;
+    }
+
+    /* Form Styling */
+    form.fundraising-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form.fundraising-form label {
+      display: block;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    form.fundraising-form input,
+    form.fundraising-form select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form.fundraising-form button {
+      margin-top: 25px;
+      background-color: #ff6633;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form.fundraising-form button:hover {
+      background-color: #e65c2a;
+    }
+
+    /* Swiper Slides */
+    .swiper-slide {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; /* Fixed width for each slide */
+      height: 720px; /* Match the height of the images */
+      overflow: hidden;
+        border-radius: 10px;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+        display: block;
+    }
+
+     .swiper-wrapper {
+    gap: 10px; /* Add spacing between slides */
+  }
+
+    .swiper-slide .overlay-text {
+      position: absolute;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 15px;
+      z-index: 2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Video Container */
+    .swiper-slide .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%; /* Match the height of the images */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .swiper-slide .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Ensure the video fills the container */
+    }
+
+    /* Breadcrumb */
+    .breadcrumb-container {
+      background-color: #f7f7f7;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-family: 'Blauer Nue', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto 2rem auto;
+      color: #666;
+    }
+    .breadcrumb a {
+      color: #333399;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span {
+      font-weight: 600;
+      color: #444;
+    }
+
+  /* Responsive Tweaks for Larger Screens */
+  @media (min-width: 1024px) {
+    .swiper-slide {
+      height: 800px; /* Increase height for larger screens */
+    }
+  }
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.9rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+
+    /* Hero Section Animation */
+.hero-content h1,
+.hero-content h2 {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInUp 1s ease-out forwards; /* Fade and slide in */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+<!-- Header Component -->
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 id="hero-title"></h1> <!-- Typing effect for h1 -->
+    <h2 id="hero-subtitle"></h2> <!-- Typing effect for h2 -->
+    <a href="https://forms.gle/uxvogcNCEUamQWLp9" target="_blank" class="btn-primary">Donate & Register Now</a>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-container" role="navigation" aria-label="Breadcrumb">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> &gt;
+    <a href="#media-centre">Media Centre</a> &gt;
+    <span>Paint Tomorrow Fundraiser</span>
+  </nav>
+</div>
+
+<!-- About Section -->
+<section id="paint-tomorrow-event" class="container">
+    <section class="campaign-section">
+  <h1>Paint Tomorrow Fundraising Event</h1>
+
+  <p>The <strong>Spursbase Foundation</strong> is proud to present its <strong>Paint Tomorrow</strong> fundraising event, scheduled for <strong>September 20, 2025</strong>, aimed at raising <strong>GHS 50,000</strong> to support education, health, and empowerment programs in rural Ghana.</p>
+
+  <p>This pivotal event will be held at <strong>C3 Ignite Church, East Legon, La Bawaleshie</strong>, bringing together <strong>over 200 stakeholders</strong> including community members, corporate partners, volunteers, and supporters dedicated to transforming the lives of children in underserved rural communities.</p>
+
+  <h2>About Paint Tomorrow</h2>
+  <p>Rural communities in Ghana face significant educational and health challenges that hinder the development and well-being of children and their families. Many schools lack adequate infrastructure, teaching materials, and qualified teachers, which leads to poor academic performance and high dropouts, especially among girls. Health barriers, including limited access to healthcare, poor nutrition, and preventable diseases, further reduce children's ability to participate fully in school and contribute to the cycle of poverty.</p>
+
+  <p>Since 2019, Spursbase Foundation has positively impacted over <strong>1,000 children</strong> and <strong>500 families</strong> through comprehensive programs enhancing education, health services, and economic independence. The proceeds from Paint Tomorrow will directly support providing school supplies to <strong>700 children</strong>, facilitating health screenings for <strong>300 children</strong>, and empowering parents through business development initiatives in three under-resourced villages.</p>
+
+  <h2>Key Objectives of Paint Tomorrow</h2>
+  <ul>
+    <li>Raise <strong>50,000 GHS</strong> to support education, health, and empowerment programs in rural Ghana.</li>
+    <li>Provide school supplies to <strong>200 children</strong> improving access to basic education.</li>
+    <li>Facilitate health screenings for <strong>300 children</strong>, addressing preventable diseases and promoting early diagnosis.</li>
+    <li>Support parents with business development opportunities to enable sustainable income, reducing child labor or school dropout due to poverty.</li>
+    <li>Engage and mobilize at least <strong>200 stakeholders</strong>, including corporate donors, artists, volunteers, and community leaders.</li>
+    <li>Increase public awareness of the interconnected challenges of education and health in rural areas through creative engagement.</li>
+  </ul>
+
+  <h2>Main Activities</h2>
+  <ul>
+    <li><strong>Speeches</strong> delivering an overview of Spursbase Foundation’s mission and progress by the founder and board members.</li>
+    <li><strong>Interactive panel discussion</strong> focusing on challenges and solutions in rural education and health.</li>
+    <li><strong>Music performances and food</strong> providing a culturally rich atmosphere for community celebration.</li>
+    <li><strong>Storytelling sessions</strong> featuring real-life stories from beneficiaries, volunteers, and children illustrating the program’s impact.</li>
+  </ul>
+
+  <h2>Expected Outcomes</h2>
+  <ol>
+    <li><strong>200 children</strong> receive essential educational supplies, improving school attendance and participation.</li>
+    <li>Health screenings for <strong>300 children</strong> enable early detection and treatment, promoting better health and reduced absenteeism.</li>
+    <li>At least <strong>50 parents</strong> empowered through business support programs, boosting household incomes and resilience.</li>
+    <li>Raised funds of <strong>50,000 GHS</strong> to sustain Spursbase Foundation’s rural programs.</li>
+    <li>Heightened awareness among <strong>200+ participants</strong> and stakeholders, encouraging advocacy and long-term partnerships.</li>
+    <li>Strengthened community pride through active participation via art, storytelling, and cultural expression.</li>
+    <li>Enhanced visibility of Spursbase Foundation as a key leader addressing rural development sustainably and creatively.</li>
+  </ol>
+
+  <h2>Conclusion</h2>
+  <p>The Paint Tomorrow fundraising event represents a unique opportunity to catalyze transformative change for children and families in rural Ghana. Through community participation, partnerships, and strategic funding, this initiative aims to break the cycles of poverty and inequality, ensuring every child, regardless of birthplace, can learn, grow, and thrive.</p>
+
+  <p>Together, we will paint a brighter future for rural communities across Ghana.</p>
+</section>
+</section>
+
+  <section style="padding: 50px 20px; background: #f9f9f9;">
+  <div style="max-width: 960px; margin: 0 auto; text-align: center;">
+    <h2 style="color: #333399; margin-bottom: 40px; font-weight: 700;">More From The Campaign</h2>
+    
+    <!-- Swiper Container -->
+    <div class="swiper campaign-swiper">
+      <div class="swiper-wrapper">
+        <!-- Image slides -->
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/BuildSchool.jpg" alt="Campaign Design 1" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Paint Tomorrow - Build Schools Poster</div>
+        </div>
+        
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/Empower Future.jpg" alt="Community Outreach Banner" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Community Outreach Banner</div>
+        </div>
+        
+        <!-- More image slides -->
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/lightpath.jpg" alt="Fundraising Event Flyer" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Fundraising Event Flyer</div>
+        </div>
+
+        <!-- Replace the YouTube video slide in the Swiper -->
+<div class="swiper-slide">
+  <div class="video-container">
+    <iframe
+      id="youtube-video"
+      src="https://www.youtube.com/embed/vmegI1NndOQ?enablejsapi=1"
+      title="PAINT TOMORROW FOR RURAL CHILDREN"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div style="padding: 15px; font-weight: 600;">Paint Tomorrow for Rural Children - Campaign Video</div>
+</div>
+        <!-- Add more slides as needed for your campaign media -->
+   <div class="swiper campaign-swiper">
+      <div class="swiper-wrapper">
+        <!-- Image slides -->
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/Unlock Tomorrow.jpg" alt="Campaign Design 1" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Paint Tomorrow - Build Schools Poster</div>
+        </div>
+        
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/SUPPORT SUCCESS.jpg" alt="Community Outreach Banner" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Community Outreach Banner</div>
+        </div>
+        
+        <!-- More image slides -->
+        <div class="swiper-slide" style="border-radius: 10px; overflow: hidden;">
+          <img src="/img/pt/shape future.jpg" alt="Fundraising Event Flyer" style="width: 100%; height: auto; display:block;" />
+          <div style="padding: 15px; font-weight: 600;">Fundraising Event Flyer</div>
+        </div>
+
+
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+</section>
+
+
+<!-- Video Section -->
+<section style="padding: 50px 20px; background: #f9f9f9; text-align: center;">
+  <div style="max-width: 720px; margin: 0 auto;">
+    <h2 style="color: #333399; font-weight: 700; margin-bottom: 30px;">See the Impact: Our Story in Action</h2>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube-nocookie.com/embed/mTRjm6woKCc?si=9HXpiXX0dpAI0a31" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen 
+        style="position: absolute; top:0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+    </div>
+    <p style="margin-top: 20px; font-size: 1.1rem; color: #555;">
+      Watch this video to witness how Spursbase Foundation is transforming the lives of children and families through education, health services, and community empowerment in rural Ghana.
+    </p>
+  </div>
+</section>
+
+<!-- Registration Section -->
+<section class="container" id="registration-section">
+  <h2>Register & Support Paint Tomorrow</h2>
+  <p>Click the button below to register and support the event:</p>
+  <a href="https://forms.gle/uxvogcNCEUamQWLp9" target="_blank" class="btn-orange">
+    Register Now
+  </a>
+</section>
+
+<!-- Registration and Donation Form -->
+<!--section class="container" id="registration-section">
+  <h2>Register & Support Paint Tomorrow</h2>
+  <form id="donation-form" class="fundraising-form">
+    <label for="full_name">Full Name *</label>
+    <input type="text" id="full_name" name="full_name" required />
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number *</label>
+    <input type="text" id="phone" name="phone" required />
+
+    <label for="attendance">Will you attend the event?</label>
+    <select id="attendance" name="attendance" required>
+      <option value="yes">Yes, I will attend</option>
+      <option value="no">No, but I want to support</option>
+      <option value="maybe">Maybe</option>
+    </select>
+
+    <label for="donation_amount">Donation Amount (GHS) *</label>
+    <select id="donation_amount" name="donation_amount" required>
+      <option value="50">50 - School supplies for one child</option>
+      <option value="100">100 - Health screening for one child</option>
+      <option value="250">250 - Business training for one parent</option>
+      <option value="custom">Custom Amount</option>
+    </select>
+
+    <input type="number" id="custom_amount" name="custom_amount" placeholder="Enter custom amount" min="1" style="display:none; margin-top:8px;" />
+
+    <label for="payment_method">Payment Method *</label>
+    <select id="payment_method" name="payment_method" required>
+      <option value="credit_card">Credit/Debit Card</option>
+      <option value="mobile_money">Mobile Money</option>
+      <option value="bank_transfer">Bank Transfer</option>
+    </select>
+
+    <div style="margin-top: 15px;">
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms">I accept the terms and conditions</label>
+    </div>
+
+    <button type="submit">Donate & Register</button>
+    <p id="form-message" style="margin-top: 15px; font-weight: 600; color: green;"></p>
+  </form>
+</section-->
+
+<!-- Footer Component -->
+<my-footer></my-footer>
+
+
+<!-- Swiper JS for hero slider -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize swiper for hero slider
+  const swiper = new Swiper('.hero-slider', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  // Donation form behavior: show/hide custom amount input
+  const donationSelect = document.getElementById('donation_amount');
+  const customAmount = document.getElementById('custom_amount');
+  donationSelect.addEventListener('change', () => {
+    if (donationSelect.value === 'custom') {
+      customAmount.style.display = 'block';
+      customAmount.required = true;
+    } else {
+      customAmount.style.display = 'none';
+      customAmount.required = false;
+      customAmount.value = '';
+    }
+  });
+
+  // Paystack integration for payment processing
+  document.getElementById('donation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fullName = this.full_name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    let amountValue = this.donation_amount.value === 'custom' ? parseInt(this.custom_amount.value) : parseInt(this.donation_amount.value);
+
+    if (!amountValue || amountValue < 1) {
+      alert('Please enter a valid donation amount.');
+      return;
+    }
+
+    const paymentMethod = this.payment_method.value;
+    if (!this.terms.checked) {
+      alert('Please accept the terms and conditions.');
+      return;
+    }
+
+    // Convert GHS to Kobo for Paystack
+    const amountKobo = amountValue * 100;
+
+    const handler = PaystackPop.setup({
+      key: 'YOUR_PAYSTACK_PUBLIC_KEY', // Replace with your public key
+      email: email,
+      amount: amountKobo,
+      currency: 'GHS',
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Full Name",
+            variable_name: "full_name",
+            value: fullName
+          },
+          {
+            display_name: "Phone Number",
+            variable_name: "phone",
+            value: phone
+          },
+          {
+            display_name: "Attendance",
+            variable_name: "attendance",
+            value: this.attendance.value
+          }
+        ]
+      },
+      callback: function(response) {
+        alert(`Thank you, ${fullName}! Your donation was successful. Reference: ${response.reference}`);
+        document.getElementById('donation-form').reset();
+        customAmount.style.display = 'none';
+      },
+      onClose: function() {
+        alert('Payment window closed.');
+      }
+    });
+    handler.openIframe();
+  });
+</script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+</script>
+
+<script>
+  // Initialize Swiper for the campaign slider
+  const campaignSwiper = new Swiper('.campaign-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000, // 5 seconds for images
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  // Load YouTube IFrame API
+  let player; // Declare the YouTube player variable
+
+  // Function to initialize the YouTube player
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-video', {
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange,
+      },
+    });
+  }
+
+  function onPlayerReady(event) {
+    console.log('YouTube Player is ready');
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+      // When the video ends, move to the next slide and resume autoplay
+      campaignSwiper.slideNext();
+      campaignSwiper.autoplay.start();
+    }
+  }
+
+  // Handle autoplay for YouTube video
+  campaignSwiper.on('slideChange', () => {
+    const activeSlide = campaignSwiper.slides[campaignSwiper.activeIndex];
+    const isVideoSlide = activeSlide.querySelector('.video-container iframe');
+
+    if (isVideoSlide) {
+      // Pause Swiper autoplay and play the video
+      campaignSwiper.autoplay.stop();
+      player.playVideo();
+    } else {
+      // Stop the video and resume Swiper autoplay
+      if (player) {
+        player.stopVideo();
+      }
+      campaignSwiper.autoplay.start();
+    }
+  });
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+<script>
+// Typing effect function
+function typeText(element, text, delay = 100) {
+  let index = 0;
+  function type() {
+    if (index < text.length) {
+      element.textContent += text[index];
+      index++;
+      setTimeout(type, delay);
+    }
+  }
+  type();
+}
+
+// Start the typing effect
+document.addEventListener('DOMContentLoaded', () => {
+  const h1 = document.getElementById('hero-title');
+  const h2 = document.getElementById('hero-subtitle');
+
+  if (h1 && h2) {
+    const h1Text = "PAINT TOMORROW, Fundraising Event";
+    const h2Text = "Building Brighter Futures Through Education";
+
+    // Type the text for h1 and h2
+    typeText(h1, h1Text, 100);
+    setTimeout(() => typeText(h2, h2Text, 100), h1Text.length * 100 + 500); // Start h2 after h1 finishes
+  } else {
+    console.error("Hero title or subtitle elements not found.");
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* ======================================================
+   privacy.css
+   Spursbase Foundation
+   ====================================================== */
+
+/* PRIVACY POLICY HERO
+   -------------------- */
+
+.policy-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;        /* adjust if you want taller/shorter */
+  overflow: hidden;
+}
+
+/* We are using the <img> element, NOT background-image */
+.policy-hero-image {
+  width: 100%;
+  height: 100%;
+}
+
+.policy-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* push the visible area up – tweak the second value */
+  object-position: center 20%;
+}
+
+/* Left red label at bottom-left */
+.policy-hero-panel {
+  position: absolute;
+  left: 0;
+  bottom: 1.25rem;   /* space above bottom edge */
+  width: auto;
+  padding-left: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.policy-hero-panel-inner {
+  background-color: #ff6633;    /* your red */
+  color: #ffffff;
+  padding: 0.85rem 1.4rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.policy-back-btn {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.policy-panel-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Breadcrumb + content (keeps what you already have similar) */
+.policy-breadcrumb {
+  max-width: 1100px;
+  margin: 1rem auto 0;
+  padding: 0 1.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.policy-breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.policy-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.policy-main {
+  max-width: 1100px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1.5rem 2rem;
+}
+
+.policy-article {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  padding: 2.25rem 2rem;
+}
+
+
+.policy-article h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.policy-article h2 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222253;
+}
+
+.policy-article p {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: #424242;
+  font-size: 0.98rem;
+}
+
+.policy-article a {
+  color: #2b2b88;
+  text-decoration: none;
+}
+
+.policy-article a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .policy-hero {
+    height: 260px;
+  }
+
+  .policy-hero-panel {
+    bottom: 0.75rem;
+    padding-left: 1rem;
+  }
+
+  .policy-hero-panel-inner {
+    padding: 0.7rem 1.1rem;
+  }
+}
+
+
+
+
+
+

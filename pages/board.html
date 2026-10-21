@@ -1,0 +1,174 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spursbase Foundation - Become-Sponsor</title>
+   <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/board.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Favicon -->
+        <link href="/img/favicon.png" rel="icon">
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<script type=module src="/js/main.js" > </script>
+<my-header> </my-header>
+<!-- END HEADER -->
+
+<!-- Leadership Banner Section -->
+<section class="leadership-hero" style="background-image:url('/img/DSC03304.jpg')">
+  <div class="leadership-overlay">
+    <div class="leadership-title">
+      <h1>LEADERSHIP</h1>
+      <span class="back-arrow">&larr;</span>
+    </div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-nav">
+  <a href="index.html">Home</a> &gt;
+  <a href="about.html">About Us</a> &gt;
+  <span>Leadership</span>
+</div>
+
+<!-- Navigation Tabs -->
+<div class="leadership-tabs">
+  <button class="tab active">Board of Trustees</button>
+  <button class="tab">Executive Committee</button>
+  <button class="tab">Management</button>
+</div>
+
+
+
+<!-- Leadership Banner -->
+<section class="board-section">
+  <div class="container">
+    <h2 class="section-title">Our Board of Directors</h2>
+    <p class="section-description">
+      The Spursbase Board provides guidance, wisdom, and unwavering support to help us reach and empower underserved communities through education and innovation.
+    </p>
+
+    <div class="board-grid">
+      <!-- 1 -->
+      <div class="board-card">
+        <img src="/img/Board/Ralph.jpg" alt="Raphael Kwame Akorli Afudzagbo">
+        <div class="card-footer">
+          <p class="name">Raphael Kwame Akorli Afudzagbo</p>
+          <p class="role">Founder & Executive Director</p>
+        </div>
+      </div>
+
+      <!-- 2–10: Duplicate and customize -->
+      <div class="board-card">
+        <img src="/img/Board/WhatsApp Image 2024-12-26 at 16.28.28_Mark.jpg" alt="Mark Adamaley">
+        <div class="card-footer">
+          <p class="name">Mark Adamaley</p>
+          <p class="role">Vice Board Chairman</p>
+        </div>
+      </div>
+
+     <!-- 3–10: Duplicate and customize -->
+      <div class="board-card">
+        <img src="/img/Board/Ashley.jpg" alt="Ashley Torto">
+        <div class="card-footer">
+          <p class="name">Ashley Torto</p>
+          <p class="role">Treasure</p>
+        </div>
+      </div>
+
+<!-- 4–10: Duplicate and customize -->
+        <div class="board-card">
+            <img src="/img/Board/_Humphrey.jpg" alt="Humphrey Ahisco Akorli">
+            <div class="card-footer">
+            <p class="name">Humphrey Ahisco Akorli</p>
+            <p class="role">Safeguarding Expect</p>
+            </div>
+        </div>
+
+            
+      <!-- Repeat for members 5–10 -->
+      <div class="board-card">
+        <img src="/img/Board/Ewurabena.jpg" alt="Ewurama Mongson">
+        <div class="card-footer">
+          <p class="name">Ewurama Mongson</p>
+          <p class="role">Legal Counsel</p>
+        </div>
+      </div>
+
+      <!-- 6–10: Duplicate and customize -->
+      <div class="board-card">
+        <img src="/img/Board/Recheal.jpg" alt="Rachel Akrofie">
+        <div class="card-footer">
+          <p class="name">Rachel Akrofie</p>
+          <p class="role">Communication & Partnerships</p>
+        </div>
+      </div>
+
+     <!-- 7–10: Duplicate and customize -->
+      <div class="board-card">
+        <img src="/img/Board/Board images Courage.jpg" alt="Courage Kakaney ">
+        <div class="card-footer">
+          <p class="name">Courage Kakaney </p>
+          <p class="role">Member</p>
+        </div>
+      </div>
+
+<!-- 8–10: Duplicate and customize -->
+        <div class="board-card">
+            <img src="/img/Board/Betinna.jpg" alt="Dr. Bettina Buabeng-Baidoo">
+            <div class="card-footer">
+            <p class="name">Dr. Bettina Buabeng-Baidoo</p>
+            <p class="role">Member</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Repeat for members 9–10 -->
+      <!--div class="board-card">
+        <img src="/img/Board/George.jpg" alt="George Abangba Anani">
+        <div class="card-footer">
+          <p class="name">George Abangba Anani</p>
+          <p class="role">Member</p>
+        </div>
+      </div-->
+
+      <!-- 9 -->
+      <!--div class="board-card">
+        <img src="/img/Board/George.jpg" alt="George Abangba Anani" style="width: auto;">
+        <div class="card-footer">
+          <p class="name">George Abangba Anani</p>
+          <p class="role">Member</p>
+        </div>
+      </div-->
+
+</section>
+
+
+
+ 
+       
+   <!-- FOOTER -->   
+  <my-footer></my-footer>
+<!-- END FOOTER -->
+
+</body>
+</html>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+  }
+</script>

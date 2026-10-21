@@ -1,0 +1,160 @@
+/* ============================================================
+   founder.css — Message from Founder page
+   ============================================================ */
+:root {
+  --fd-blue:   #2b2b88;
+  --fd-orange: #ff6633;
+  --fd-light:  #f5f6fa;
+  --fd-border: #e4e4ef;
+  --fd-text:   #1c1c2e;
+  --fd-muted:  #5a5a72;
+}
+
+/* HERO BANNER */
+.founder-banner {
+  background: url('/img/DSC03825.jpg') 50% 20% / cover no-repeat;
+  height: 420px;
+  position: relative;
+}
+.founder-banner-overlay {
+  background: linear-gradient(to right, rgba(43,43,136,0.8) 0%, rgba(0,0,0,0.35) 100%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.founder-banner-overlay h1 {
+  background: var(--fd-orange);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  margin: 0;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+}
+
+/* BREADCRUMB */
+.breadcrumb,
+.breadcrumb-nav {
+  background: var(--fd-light);
+  padding: 13px 7%;
+  font-size: 0.88rem;
+  color: var(--fd-muted);
+  border-bottom: 1px solid var(--fd-border);
+}
+.breadcrumb a,
+.breadcrumb-nav a { color: var(--fd-muted); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover,
+.breadcrumb-nav a:hover { color: var(--fd-orange); }
+
+/* MESSAGE SECTION */
+.founder-message-section {
+  background: #fff;
+  padding: 72px 7%;
+}
+.founder-message-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Text */
+.founder-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--fd-muted);
+}
+.founder-text p {
+  margin-bottom: 24px;
+}
+
+/* Opening paragraph — elevated */
+.founder-text > p:first-child {
+  font-size: 1.15rem;
+  color: var(--fd-text);
+  font-weight: 500;
+  padding: 28px 32px;
+  background: var(--fd-light);
+  border-left: 5px solid var(--fd-orange);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 36px;
+  line-height: 1.85;
+}
+
+/* Blockquote */
+.founder-text blockquote {
+  margin: 36px 0;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, var(--fd-blue) 0%, #3d3db0 100%);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.95);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  position: relative;
+  border: none;
+}
+.founder-text blockquote::before {
+  content: '\201C';
+  font-size: 4rem;
+  color: var(--fd-orange);
+  position: absolute;
+  top: 8px; left: 20px;
+  line-height: 1;
+  font-style: normal;
+  font-family: var(--sb-font);
+}
+.founder-text blockquote p {
+  margin: 0;
+  padding-left: 32px;
+  color: inherit;
+}
+
+/* SIGN-OFF */
+.founder-signoff {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid var(--fd-border);
+}
+.founder-signoff img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid var(--fd-orange);
+  box-shadow: 0 6px 20px rgba(43,43,136,0.18);
+  flex-shrink: 0;
+}
+.founder-signoff div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.founder-signoff p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--fd-muted);
+  line-height: 1.6;
+}
+.founder-signoff .signature {
+  font-size: 1rem;
+  color: var(--fd-text);
+}
+.founder-signoff strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--fd-blue);
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .founder-message-section { padding: 48px 5%; }
+  .founder-signoff { flex-direction: column; text-align: center; }
+  .founder-signoff img { width: 100px; height: 100px; }
+  .founder-text > p:first-child { padding: 20px; font-size: 1.05rem; }
+}

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paint Tomorrow - Spursbase Foundation Fundraising Event</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <style>
+    /* Reset and base */
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa; color: #333;
+    }
+    a {
+      text-decoration: none; color: #e67e22;
+    }
+    a:hover {text-decoration: underline;}
+
+    /* Container */
+    .container {
+      max-width: 960px; margin: 0 auto; padding: 0 20px 60px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      height: 75vh;
+      background: url('/img/pt/BuildSchool.jpg') center center/cover no-repeat;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 15px;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+      border-radius: 0 0 40px 40px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 40px 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.8rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: 1.5px;
+    }
+    .hero-content h3 {
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1.7rem;
+      margin-bottom: 35px;
+      opacity: 0.9;
+    }
+    .hero-content .btn-primary {
+      background: #e67e22;
+      padding: 18px 45px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: white;
+      box-shadow: 0 6px 10px rgba(230,126,34,0.6);
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    .hero-content .btn-primary:hover {
+      background: #cf7116;
+    }
+
+    /* Video Section */
+    .video-section {
+      background: #f9f9f9;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .video-section h2 {
+      color: #2980b9;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      max-width: 720px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-section p {
+      margin-top: 22px;
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Campaign Gallery */
+    .gallery-section {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+    .gallery-section h2 {
+      color: #2980b9;
+      margin-bottom: 42px;
+      font-weight: 700;
+    }
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 26px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .gallery-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 280px;
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+    .gallery-card:hover {
+      transform: translateY(-8px);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 16px 12px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    /* Event Info Section */
+    .info-section {
+      max-width: 960px;
+      margin: 50px auto 70px;
+      background: white;
+      padding: 38px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .info-section h2 {
+      color: #2980b9;
+      margin-bottom: 24px;
+    }
+    .info-section p {
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      line-height: 1.55;
+      color: #444;
+    }
+    .objectives-list {
+      list-style: square;
+      margin-left: 20px;
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+    .objectives-list li {
+      margin-bottom: 10px;
+    }
+
+    /* Schedule Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      color: #555;
+      font-size: 1rem;
+    }
+    th {
+      background: #333399;
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Registration & Donation Form */
+    form.fundraising-form {
+      max-width: 600px;
+      margin: 0 auto 80px auto;
+      background: #fff;
+      padding: 32px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    form.fundraising-form label {
+      font-weight: 600;
+      margin-top: 18px;
+      display: block;
+      color: #2c3e50;
+    }
+    form.fundraising-form input,
+    form.fundraising-form select {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1rem;
+      margin-top: 6px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      color: #333;
+      outline-offset: 2px;
+    }
+    form.fundraising-form input:focus,
+    form.fundraising-form select:focus {
+      outline: 2px solid #ff6633;
+    }
+    form.fundraising-form .btn-submit {
+      margin-top: 30px;
+      background-color: #ff6633;
+      border: none;
+      color: white;
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    form.fundraising-form .btn-submit:hover {
+      background-color: #cf7116;
+    }
+
+    /* Terms Checkbox */
+    .terms-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+    .terms-container input[type="checkbox"] {
+      width: 18px; height: 18px;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.7rem;
+      }
+      .hero-content h3 {
+        font-size: 1.3rem;
+      }
+      .gallery-grid {
+        justify-content: center;
+      }
+      table, th, td {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- Hero Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paint Tomorrow - Spursbase Foundation Fundraiser</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Blauer+Nue:wght@300;400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Button Styles */
+    .btn-orange {
+      background-color: #e67e22;
+      color: white;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-orange:hover {
+      background-color: #cf7116;
+    }
+
+    /* General Container Styles */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Section Headers */
+    h2 {
+      color: #333399;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 3px solid #333399;
+      padding-bottom: 8px;
+    }
+
+    /* Hero Section */
+    .hero-slider .swiper-slide {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 30px 40px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Objectives List */
+    ul.objectives {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    ul.objectives li {
+      margin-bottom: 10px;
+    }
+
+    /* Form Styling */
+    form.fundraising-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form.fundraising-form label {
+      display: block;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    form.fundraising-form input,
+    form.fundraising-form select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form.fundraising-form button {
+      margin-top: 25px;
+      background-color: #ff6633;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form.fundraising-form button:hover {
+      background-color: #e65c2a;
+    }
+
+    /* Swiper Slides */
+    .swiper-slide {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px; /* Match the height of the images */
+      overflow: hidden;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%); /* Darken the image for better text readability */
+    }
+    .swiper-slide .overlay-text {
+      position: absolute;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 15px;
+      z-index: 2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Video Container */
+    .swiper-slide .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%; /* Match the height of the images */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .swiper-slide .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Ensure the video fills the container */
+    }
+
+    /* Breadcrumb */
+    .breadcrumb-container {
+      background-color: #f7f7f7;
+      padding: 6px 20px;
+      font-size: 0.95rem;
+      font-family: 'Blauer Nue', sans-serif;
+      max-width: 960px;
+      margin: 0 auto 2rem auto;
+      color: #666;
+    }
+    .breadcrumb a {
+      color: #333399;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span {
+      font-weight: 600;
+      color: #444;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.9rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Content remains the same -->
+</body>
+</html>
+<!-- Video Section -->
+<section class="video-section">
+  <h2>See the Impact: Our Story in Action</h2>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube-nocookie.com/embed/mTRjm6woKCc?si=9HXpiXX0dpAI0a31" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <p>Watch this video to witness how Spursbase Foundation is transforming the lives of children and families through education, health services, and community empowerment in rural Ghana.</p>
+</section>
+
+<!-- Campaign Gallery -->
+<section class="gallery-section">
+  <h2>More from the Campaign</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="/img/pt/BuildSchool.jpg" alt="Paint Tomorrow Build Schools Poster" />
+      <div class="gallery-caption">Paint Tomorrow - Build Schools Poster</div>
+    </div>
+    <!-- Add more campaign images here -->
+    <div class="gallery-card">
+      <img src="/img/pt/Empower Future.jpg" alt="Empower Future campaign artwork" />
+      <div class="gallery-caption">Empower Future</div>
+    </div>
+    <div class="gallery-card">
+      <img src="/img/pt/Open Doors.jpg" alt="Open Doors campaign artwork" />
+      <div class="gallery-caption">Open Doors</div>
+    </div>
+  </div>
+</section>
+
+<!-- Event Info Section -->
+<section class="info-section container">
+  <h2>About Paint Tomorrow</h2>
+  <p>The <strong>Paint Tomorrow</strong> event is a fundraising effort targeting GHS 50,000 to provide school supplies, health screenings, and business support to rural Ghanaian communities. Through powerful collaboration, cultural events, and generosity, we aim to transform education and health outcomes for children and families.</p>
+  <h3>Key Objectives</h3>
+  <ul class="objectives-list">
+    <li>Raise 50,000 GHS for education, health, and empowerment programs.</li>
+    <li>Provide school supplies to 700 children.</li>
+    <li>Facilitate health screenings for 300 children to detect illnesses early.</li>
+    <li>Empower parents through business development opportunities.</li>
+    <li>Engage over 200 stakeholders in mobilizing rural development.</li>
+  </ul>
+
+  <h3>Event Schedule</h3>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Activity</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>4:30 PM</td><td>Arrival & Registration: Networking and welcome reception</td></tr>
+      <tr><td>5:00 PM</td><td>Opening Ceremony: Prayer, welcome speeches, video presentation</td></tr>
+      <tr><td>5:35 PM</td><td>Interactive Panel Discussion and audience Q&A</td></tr>
+      <tr><td>6:05 PM</td><td>Sponsors Spotlight and Booth Visits</td></tr>
+      <tr><td>6:25 PM</td><td>Support In Action: Sponsorship & merchandise purchases</td></tr>
+      <tr><td>6:40 PM</td><td>Closing Remarks & Appreciation</td></tr>
+      <tr><td>7:00 PM</td><td>Event Conclusion & Informal Networking</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Registration & Donation Form -->
+<section class="container">
+  <h2 style="text-align:center; margin-bottom: 35px;">Register & Support Paint Tomorrow</h2>
+  <form id="donation-form" class="fundraising-form" novalidate>
+    <label for="full_name">Full Name *</label>
+    <input type="text" id="full_name" name="full_name" required />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label for="attendance">Will you attend the event?</label>
+    <select id="attendance" name="attendance" required>
+      <option value="yes">Yes, I will attend</option>
+      <option value="no">No, but I want to support</option>
+      <option value="maybe">Maybe</option>
+    </select>
+
+    <label for="donation_amount">Donation Amount (GHS) *</label>
+    <select id="donation_amount" name="donation_amount" required>
+      <option value="50">50 - School supplies for one child</option>
+      <option value="100">100 - Health screening for one child</option>
+      <option value="250">250 - Business training for one parent</option>
+      <option value="custom">Custom Amount</option>
+    </select>
+
+    <input type="number" id="custom_amount" name="custom_amount" min="1" placeholder="Enter custom amount" style="display:none;" />
+
+    <label for="payment_method">Payment Method *</label>
+    <select id="payment_method" name="payment_method" required>
+      <option value="credit_card">Credit/Debit Card</option>
+      <option value="mobile_money">Mobile Money</option>
+      <option value="bank_transfer">Bank Transfer</option>
+    </select>
+
+    <div class="terms-container">
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms">I accept the terms and conditions</label>
+    </div>
+
+    <button type="submit" class="btn-submit">Donate & Register</button>
+
+    <p id="form-message" style="margin-top: 18px; font-weight: 600; text-align: center;"></p>
+  </form>
+</section>
+
+<!-- Footer -->
+<my-footer></my-footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  // Show/hide custom amount input
+  const donationSelect = document.getElementById('donation_amount');
+  const customAmountInput = document.getElementById('custom_amount');
+  donationSelect.addEventListener('change', () => {
+    if (donationSelect.value === 'custom') {
+      customAmountInput.style.display = 'block';
+      customAmountInput.required = true;
+    } else {
+      customAmountInput.style.display = 'none';
+      customAmountInput.required = false;
+      customAmountInput.value = '';
+    }
+  });
+
+  // Form submission & Paystack integration
+  document.getElementById('donation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fullName = this.full_name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const attendance = this.attendance.value;
+    let amount = this.donation_amount.value === 'custom' ? parseInt(this.custom_amount.value) : parseInt(this.donation_amount.value);
+    const paymentMethod = this.payment_method.value;
+    const termsAccepted = this.terms.checked;
+
+    const formMessage = document.getElementById('form-message');
+    formMessage.style.color = 'red';
+
+    if (!termsAccepted) {
+      formMessage.textContent = 'Please accept the terms and conditions.';
+      return;
+    }
+    if (!fullName || !email || !phone || isNaN(amount) || amount < 1) {
+      formMessage.textContent = 'Please fill all required fields correctly.';
+      return;
+    }
+
+    const amountKobo = amount * 100; // convert to Kobo
+
+    // Paystack payment
+    let handler = PaystackPop.setup({
+      key: 'YOUR_PAYSTACK_PUBLIC_KEY',  // Replace with your public key
+      email: email,
+      amount: amountKobo,
+      currency: 'GHS',
+      metadata: {
+        custom_fields: [
+          { display_name: "Full Name", variable_name: "full_name", value: fullName },
+          { display_name: "Phone", variable_name: "phone", value: phone },
+          { display_name: "Attendance", variable_name: "attendance", value: attendance },
+          { display_name: "Payment Method", variable_name: "payment_method", value: paymentMethod }
+        ]
+      },
+      callback: function(response) {
+        formMessage.style.color = 'green';
+        formMessage.textContent = `Thank you, ${fullName}! Your donation was successful. Reference: ${response.reference}`;
+        document.getElementById('donation-form').reset();
+        customAmountInput.style.display = 'none';
+      },
+      onClose: function() {
+        alert('Payment window closed.');
+      }
+    });
+    handler.openIframe();
+  });
+
+  // Initialize hero slider (if needed in the future)
+  // const swiper = new Swiper('.hero-slider', {...});
+</script>
+
+</body>
+</html>

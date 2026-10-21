@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/education.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Favicon -->
+        <link href="/img/favicon.png" rel="icon">
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<!-- HERO -->
+<div class="ep-hero">
+  <img src="/img/Ed.jpg" alt="Education" />
+</div>
+<div class="ep-hero-caption">
+  <i class="fas fa-quote-left"></i>
+  <p>"Where a child is born should never determine the opportunities they have in life."</p>
+</div>
+
+<!-- BODY -->
+<div class="ep-body">
+
+  <!-- SIDEBAR -->
+  <aside class="ep-sidebar">
+    <a href="programs.html" class="ep-back"><i class="fas fa-arrow-left"></i> All Programs</a>
+
+    <div class="ep-acc-header" onclick="this.classList.toggle('collapsed')">
+      About The Programme <i class="fas fa-chevron-down chevron"></i>
+    </div>
+
+    <div class="ep-nav">
+
+      <div class="ep-nav-item active open" onclick="epToggleSub(this,'sub-ourwork'); epShow('pane-ourwork')">
+        Our Work <i class="fas fa-chevron-right arrow"></i>
+      </div>
+      <div class="ep-sub-nav open" id="sub-ourwork">
+        <a href="#" class="active" onclick="epShow('pane-ourwork'); epSubActive(this); return false;">Overview</a>
+        <a href="#" onclick="epShow('pane-approach'); epSubActive(this); return false;">Our Approach</a>
+        <a href="#" onclick="epShow('pane-wayforward'); epSubActive(this); return false;">Way Forward</a>
+      </div>
+
+      <div class="ep-nav-item" onclick="epToggleSub(this,'sub-reach'); epShow('pane-reach')">
+        Our Reach <i class="fas fa-chevron-right arrow"></i>
+      </div>
+      <div class="ep-sub-nav" id="sub-reach">
+        <a href="#" onclick="epShow('pane-reach'); epSubActive(this); return false;">Ghana</a>
+        <a href="#" onclick="epShow('pane-reach'); epSubActive(this); return false;">Africa</a>
+        <a href="#" onclick="epShow('pane-reach'); epSubActive(this); return false;">Global</a>
+      </div>
+
+      <div class="ep-nav-item" onclick="epShow('pane-projects'); epNavActive(this)">
+        Projects <i class="fas fa-chevron-right arrow"></i>
+      </div>
+
+      <div class="ep-nav-item" onclick="epShow('pane-challenge'); epNavActive(this)">
+        Challenge <i class="fas fa-chevron-right arrow"></i>
+      </div>
+
+      <div class="ep-nav-item" onclick="epShow('pane-solution'); epNavActive(this)">
+        Solution <i class="fas fa-chevron-right arrow"></i>
+      </div>
+
+      <div class="ep-nav-item" onclick="epShow('pane-resources'); epNavActive(this)">
+        Resources <i class="fas fa-chevron-right arrow"></i>
+      </div>
+
+      <a class="ep-nav-donate" href="https://paystack.shop/pay/oh2bqa2xdw">Donate</a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="ep-content">
+    <h1 class="ep-page-title">Education Programme</h1>
+
+    <!-- OUR WORK — OVERVIEW -->
+    <div class="ep-pane active" id="pane-ourwork">
+      <div class="ep-quote">
+        <div class="ep-quotemark">"</div>
+        <blockquote>"The chance of an education is a chance to escape poverty, to improve health and to enhance opportunities."</blockquote>
+        <cite>Spursbase Foundation</cite>
+      </div>
+      <h2>Our Objective</h2>
+      <p>Spursbase Foundation's Education Programme supports the hardest-to-reach out-of-school children around the world facing barriers to education including poverty, discrimination, conflict, challenging geographies, and climate change.</p>
+      <p>We and our partners scale up existing education projects in support of the United Nations' Sustainable Development Goal of achieving quality education for all by 2030.</p>
+      <div class="ep-pills">
+        <div class="ep-pill"><i class="fas fa-female"></i> Girls' Education</div>
+        <div class="ep-pill"><i class="fas fa-wheelchair"></i> Inclusive Education</div>
+        <div class="ep-pill"><i class="fas fa-shield-alt"></i> Education in Emergencies</div>
+        <div class="ep-pill"><i class="fas fa-baby"></i> Early Childhood</div>
+        <div class="ep-pill"><i class="fas fa-school"></i> Primary Education</div>
+        <div class="ep-pill"><i class="fas fa-laptop"></i> Digital Education</div>
+        <div class="ep-pill"><i class="fas fa-user-graduate"></i> Adolescent Skills</div>
+        <div class="ep-pill"><i class="fas fa-handshake"></i> Partnerships</div>
+      </div>
+    </div>
+
+    <!-- OUR APPROACH -->
+    <div class="ep-pane" id="pane-approach">
+      <h2>Our Work</h2>
+      <p>Spursbase Foundation's Education Programme is built around a uniquely flexible model. Our local and national partners tailor their grassroots solutions to the needs of out-of-school children in their communities and countries, in line with predefined goals and success metrics.</p>
+      <p>This allows us to bridge formal with non-formal education approaches, reaching and engaging children no matter their geography, circumstances, or context. Our approach is guided by 10 core principles:</p>
+      <ol class="ep-list">
+        <li><strong>Adopt a rights-based approach to education</strong><span>Protect children's universal right to learn by working with partners to overcome barriers that prevent them from accessing quality primary education.</span></li>
+        <li><strong>Identify communities with the greatest need</strong><span>Focus resources on areas with a substantial number of out-of-school children and partners with a proven track record.</span></li>
+        <li><strong>Commit to evidence-based programming</strong><span>Support informed decision-making with sound educational data that highlights national, regional and local disparities.</span></li>
+        <li><strong>Work within national education plans</strong><span>Align project activities with a country's national education plans, ensuring accountability at every level of governance.</span></li>
+        <li><strong>Emphasise lifelong learning</strong><span>Contribute to each individual's ability and skills development beyond academia, empowering them to make informed choices.</span></li>
+        <li><strong>Harness the power of partnerships</strong><span>Recognise the importance of joint programming for reaching the hardest-to-reach children through innovative approaches.</span></li>
+        <li><strong>Promote value creation through partnerships</strong><span>Catalyse quality education opportunities by leveraging strong partnerships with organisations that have successful, tested models.</span></li>
+        <li><strong>Ensure programming sustainability</strong><span>Help mobilise long-term funding sources through the promotion, replication, and expansion of strategies proven to reach children.</span></li>
+        <li><strong>Learn from monitoring and evaluation</strong><span>Collect, analyse and use data on opportunities and obstacles that arise as children access and complete their education.</span></li>
+        <li><strong>Advocate for out-of-school children</strong><span>Commit to building a global alliance to advocate for the right of every child to be enrolled in primary education.</span></li>
+      </ol>
+    </div>
+
+    <!-- WAY FORWARD -->
+    <div class="ep-pane" id="pane-wayforward">
+      <h2>Way Forward</h2>
+      <p>In addition to maintaining support for existing education interventions, Spursbase Foundation has committed to reaching an additional 50,000 children each year. Our forward-looking At-Risk Initiative helps prevent vulnerable children from dropping out of education.</p>
+      <div class="ep-callout">
+        <h4>At-Risk Initiative</h4>
+        <p>Identifying and supporting children at the highest risk of dropping out before they fall through the cracks, through early warning systems, community engagement, and targeted support.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Digital Learning Expansion</h4>
+        <p>Rolling out low-cost digital tools to remote classrooms, giving teachers and students access to quality learning materials regardless of location.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Girls' Education Pledge</h4>
+        <p>Doubling the number of girls supported through scholarships, mentorship, and community engagement programmes by 2027.</p>
+      </div>
+    </div>
+
+    <!-- OUR REACH -->
+    <div class="ep-pane" id="pane-reach">
+      <h2>Our Reach</h2>
+      <p>Spursbase Foundation's education work spans communities across Ghana and extends to partner organisations in sub-Saharan Africa. We currently operate in 47 schools across 6 regions of Ghana.</p>
+      <div class="ep-callout">
+        <h4>Ghana</h4>
+        <p>Our primary area of operation. We work with 47 schools across the Greater Accra, Central, Northern, Volta, Eastern, and Western regions, supporting over 12,400 children directly.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Sub-Saharan Africa</h4>
+        <p>Through partnerships with local organisations we extend our reach to communities in West and East Africa, sharing resources, models, and best practices.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Global Network</h4>
+        <p>We participate in global education coalitions and advocate for the right to education in international forums, amplifying the voices of the communities we serve.</p>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="ep-pane" id="pane-projects">
+      <h2>Projects</h2>
+      <p>Explore the active initiatives running under Spursbase Foundation's Education Programme. Click on any project to read more.</p>
+      <div class="ep-proj-grid">
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/DSC03825.jpg" alt="Read the World" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Read the World Initiative</h3>
+            <p>Building literacy from the ground up, putting books, trained teachers, and reading programmes in the hands of children who need it most.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/DSC00380.jpg" alt="Girls Back to School" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Girls Back to School</h3>
+            <p>Removing the barriers that keep adolescent girls out of secondary education through scholarships, mentoring, and community engagement.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/DSC04221.jpg" alt="Digital Classrooms" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Digital Classrooms</h3>
+            <p>Equipping schools with tablets, solar power, and digital content so that geography is no longer a barrier to a quality education.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/IMG_0170.jpg" alt="Teacher Training" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Teacher Training Programme</h3>
+            <p>Investing in the people at the heart of every classroom with professional development, resources, and ongoing support for teachers.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/DSC09605.jpg" alt="Early Learning Hubs" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Early Learning Hubs</h3>
+            <p>Community-based pre-school centres giving children aged 3 to 5 a strong foundation before they enter the formal school system.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="ep-proj-card">
+          <div class="ep-proj-card-img"><img src="/img/mei.jpg" alt="Scholarship Programme" /></div>
+          <div class="ep-proj-card-body">
+            <h3>Scholarship Programme</h3>
+            <p>Full and partial scholarships for outstanding children from low-income families, ensuring financial hardship never ends a bright student's journey.</p>
+            <span class="ep-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHALLENGE -->
+    <div class="ep-pane" id="pane-challenge">
+      <h2>Challenge</h2>
+      <p>In spite of the progress Ghana has made in improving access to education, thousands of children are still prevented from going to school and learning. Classes are overcrowded, water and sanitation facilities are inadequate, and trained teachers and materials are in short supply.</p>
+      <div class="ep-callout">
+        <h4>Early Learning Gap</h4>
+        <p>Nearly 623,500 children of primary school age are still not enrolled. One in four children in the kindergarten age range are not in pre-school, leaving a critical gap in their foundational development.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Adolescent Girls</h4>
+        <p>Although Ghana has closed the gender gap at primary level, it remains high at secondary level. Adolescent girls are often unable to complete education due to poverty, gender inequality, and long distances from school.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Inclusive Education</h4>
+        <p>Children with disabilities often lose out because they are invisible in data and overlooked during programme implementation. Without disability-friendly infrastructure, they face irregular attendance and eventually drop out.</p>
+      </div>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="ep-pane" id="pane-solution">
+      <h2>Solution</h2>
+      <p>Spursbase Foundation is working with the Ministry of Education, Ghana Education Service, and other partners to create a more child-friendly environment in schools so that all children can learn.</p>
+      <div class="ep-callout">
+        <h4>Early Learning Centres</h4>
+        <p>Establishing and equipping community-based pre-school centres so that every child enters primary school ready to learn.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Girls' Education Support</h4>
+        <p>Scholarships, mentorship, safe transport, and school materials targeted specifically at keeping adolescent girls enrolled and learning.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Disability-Friendly Schools</h4>
+        <p>Retrofitting and designing school environments that are fully accessible and welcoming for children with physical disabilities and learning differences.</p>
+      </div>
+      <div class="ep-callout">
+        <h4>Teacher Development</h4>
+        <p>Ongoing professional training, mentoring, and resource provision for teachers to equip them to support every child in their classroom.</p>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="ep-pane" id="pane-resources">
+      <h2>Resources</h2>
+      <p>Reports, case studies and guidelines produced from our education work:</p>
+      <div class="ep-resource">
+        <div class="ep-resource-icon"><i class="fas fa-file-alt"></i></div>
+        <div>
+          <div class="ep-resource-type">Report</div>
+          <div class="ep-resource-title">Mobile School Report Card (mSRC), Research on its use as a school management tool</div>
+        </div>
+      </div>
+      <div class="ep-resource">
+        <div class="ep-resource-icon"><i class="fas fa-file-alt"></i></div>
+        <div>
+          <div class="ep-resource-type">Case Study</div>
+          <div class="ep-resource-title">The link between teen pregnancy and low completion rates of education among girls</div>
+        </div>
+      </div>
+      <div class="ep-resource">
+        <div class="ep-resource-icon"><i class="fas fa-file-alt"></i></div>
+        <div>
+          <div class="ep-resource-type">Report</div>
+          <div class="ep-resource-title">National Early Learning and Development Standards, Assessing and tracking children's development</div>
+        </div>
+      </div>
+      <div class="ep-resource">
+        <div class="ep-resource-icon"><i class="fas fa-file-alt"></i></div>
+        <div>
+          <div class="ep-resource-type">Guidelines</div>
+          <div class="ep-resource-title">Inclusive Education In Ghana, Standards and Guidelines for putting inclusive education into practice</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- NEWS -->
+<section class="ep-news">
+  <div class="ep-news-inner">
+    <div class="ep-news-label">Latest from Education</div>
+    <div class="ep-news-grid">
+      <div class="ep-news-card">
+        <img src="/img/DSC03825.jpg" alt="" />
+        <div class="ep-news-card-body">
+          <div class="ep-news-date">February 15, 2026</div>
+          <h3>Why Community Radio Remains Essential to Expanding Education Access</h3>
+        </div>
+      </div>
+      <div class="ep-news-card">
+        <img src="/img/IMG_0170.jpg" alt="" />
+        <div class="ep-news-card-body">
+          <div class="ep-news-date">January 23, 2026</div>
+          <h3>Where I Belong, Stories from Our Scholarship Recipients</h3>
+        </div>
+      </div>
+      <div class="ep-news-card">
+        <img src="/img/DSC09605.jpg" alt="" />
+        <div class="ep-news-card-body">
+          <div class="ep-news-date">December 31, 2025</div>
+          <h3>Breaking Poverty Barriers to Education in Rural Ghana</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<my-footer></my-footer>
+
+<script>
+  function epShow(id) {
+    document.querySelectorAll('.ep-pane').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (window.innerWidth < 900) {
+      document.querySelector('.ep-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function epToggleSub(navItem, subId) {
+    const sub = document.getElementById(subId);
+    const isOpen = sub.classList.contains('open');
+    document.querySelectorAll('.ep-sub-nav').forEach(s => s.classList.remove('open'));
+    document.querySelectorAll('.ep-nav-item').forEach(n => { n.classList.remove('open'); });
+    if (!isOpen) { sub.classList.add('open'); navItem.classList.add('open'); }
+    epNavActive(navItem);
+  }
+
+  function epNavActive(el) {
+    document.querySelectorAll('.ep-nav-item').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function epSubActive(el) {
+    document.querySelectorAll('.ep-sub-nav a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

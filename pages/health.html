@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health &amp; Wellbeing  |  Spursbase Foundation</title>
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/health.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Favicon -->
+        <link href="/img/favicon.png" rel="icon">
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<div class="hw-hero">
+  <img src="/img/DSC03825.jpg" alt="Health & Wellbeing" />
+</div>
+<div class="hw-hero-caption">
+  <i class="fas fa-quote-left"></i>
+  <p>"Every child deserves to grow up healthy, dignified, and free from the barriers that keep them from thriving."</p>
+</div>
+
+<div class="hw-body">
+  <aside class="hw-sidebar">
+    <a href="programs.html" class="hw-back"><i class="fas fa-arrow-left"></i> All Programs</a>
+    <div class="hw-acc-header" onclick="this.classList.toggle('collapsed')">
+      About The Programme <i class="fas fa-chevron-down chevron"></i>
+    </div>
+    <div class="hw-nav">
+      <div class="hw-nav-item active" onclick="hwShow('pane-overview');hwNavActive(this)">Overview <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="hw-nav-item" onclick="hwShow('pane-challenge');hwNavActive(this)">Challenge <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="hw-nav-item" onclick="hwShow('pane-projects');hwNavActive(this)">Projects <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="hw-nav-item" onclick="hwShow('pane-impact');hwNavActive(this)">Impact <i class="fas fa-chevron-right arrow"></i></div>
+      <div class="hw-nav-item" onclick="hwShow('pane-approach');hwNavActive(this)">Our Approach <i class="fas fa-chevron-right arrow"></i></div>
+      <a class="hw-nav-donate" href="https://paystack.shop/pay/oh2bqa2xdw">Donate</a>
+    </div>
+  </aside>
+
+  <main class="hw-content">
+    <!-- OVERVIEW -->
+    <div class="hw-pane active" id="pane-overview">
+      <div class="hw-quote">
+        <div class="hw-quotemark">"</div>
+        <blockquote>"Health is not a privilege, it is the foundation upon which every child's education and future must be built."</blockquote>
+        <cite>Spursbase Foundation</cite>
+      </div>
+      <h2>Our Objective</h2>
+      <p>Despite progress in expanding health infrastructure across Ghana, access to quality healthcare remains deeply unequal. In marginalised rural communities, poorly equipped facilities, limited resources, and systemic gaps leave children and families vulnerable, driving self-medication, preventable illness, and early school dropout.</p>
+      <p>Spursbase Foundation's Health & Wellbeing Programme addresses the intersecting health challenges that prevent children from attending school, learning confidently, and reaching their potential. We focus on menstrual health, mental wellbeing, sexual and reproductive health, and holistic wellness for children and adolescents in underserved communities.</p>
+      <div class="hw-pills">
+        <div class="hw-pill"><i class="fas fa-female"></i> Menstrual Health</div>
+        <div class="hw-pill"><i class="fas fa-brain"></i> Mental Wellbeing</div>
+        <div class="hw-pill"><i class="fas fa-heart"></i> Reproductive Health</div>
+        <div class="hw-pill"><i class="fas fa-child"></i> Child Dignity</div>
+        <div class="hw-pill"><i class="fas fa-users"></i> Boy-Inclusive Education</div>
+        <div class="hw-pill"><i class="fas fa-hand-holding-heart"></i> Community Support</div>
+      </div>
+    </div>
+
+    <!-- CHALLENGE -->
+    <div class="hw-pane" id="pane-challenge">
+      <h2>The Challenge</h2>
+      <p>Inspite of the progress Ghana has made in ensuring that health facilities are available for many communities and health insurance for all, access has always been a challenge for vulnerable communities in marginalised areas. Lack of well-equipped facilities leads to many losing their lives, and a lack of resources makes it hard for children to access care, leading to self-medication and preventable illness.</p>
+      <div class="hw-callout">
+        <h4>Period Poverty</h4>
+        <p>Nearly half of girls in Ghana face challenges accessing sanitary products, causing them to miss school during menstruation. Some girls resort to working to afford pads, exposing them to risks including unplanned pregnancies and ultimately dropping out of school entirely.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Mental Health Crisis</h4>
+        <p>About one third of children in Ghana face trauma and other mental health challenges, causing many to become timid in class and in their communities. This is increasingly recognised as a public health problem that requires community-level solutions.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Sexual & Reproductive Health</h4>
+        <p>Many adolescents in marginalised and underserved communities find it difficult to access sexual and reproductive health services, leading to a high rate of unintended pregnancies and school dropout, particularly among girls.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Stigma & Silence</h4>
+        <p>Cultural taboos around menstruation, mental health, and reproductive wellbeing prevent open conversations in schools and homes, leaving children without the information and support they need to thrive.</p>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="hw-pane" id="pane-projects">
+      <h2>Projects</h2>
+      <p>Our Health & Wellbeing Programme runs targeted initiatives that address period poverty, mental health, and reproductive wellbeing across Ghana's underserved communities.</p>
+      <div class="hw-proj-grid">
+        <div class="hw-proj-card">
+          <div class="hw-proj-card-img"><img src="/img/DSC03825.jpg" alt="PAD The Girl" /></div>
+          <div class="hw-proj-card-body">
+            <h3>PAD (Protecting & Developing) The Girl Child Campaign</h3>
+            <p>Distributing sanitary pads and providing menstrual health education across schools in Ghana, including boy-inclusive conversations to break stigma and keep girls in class.</p>
+            <span class="hw-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="hw-proj-card">
+          <div class="hw-proj-card-img"><img src="/img/DSC00380.jpg" alt="Let's Talk" /></div>
+          <div class="hw-proj-card-body">
+            <h3>Let's Talk</h3>
+            <p>A safe-space programme that opens conversations on mental health, trauma, and emotional wellbeing for children and adolescents in marginalised communities.</p>
+            <span class="hw-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="hw-proj-card">
+          <div class="hw-proj-card-img"><img src="/img/DSC04221.jpg" alt="Wellness 360" /></div>
+          <div class="hw-proj-card-body">
+            <h3>Wellness 360</h3>
+            <p>A holistic wellbeing programme combining physical health awareness, sexual and reproductive health education, and psychosocial support for young people in underserved schools.</p>
+            <span class="hw-proj-read">Read More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="hw-pane" id="pane-impact">
+      <h2>Our Impact</h2>
+      <p>In 2025, our health interventions reached over 3,000 children and families across the Volta, North East, and Central Regions of Ghana.</p>
+      <div class="hw-callout">
+        <h4>416 Girls + 272 Boys</h4>
+        <p>Reached through hands-on menstrual health education and pad distribution across 8 schools in 3 regions, Central Tongu, Kunkwa JHS, and Awutu Bereku.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>100+ Sanitary Pads Distributed</h4>
+        <p>Delivered directly to girls with live demonstrations for 125 pupils, restoring dignity and improving school attendance.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Girls' Attendance Rose to 85%</h4>
+        <p>By addressing period poverty and creating supportive learning spaces, school attendance among girls increased significantly across our partner schools.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>National Virtual Campaign</h4>
+        <p>The "Beyond The Pad" virtual campaign on 20 May 2025 brought together thought leaders, educators, and advocates nationwide to advance sustainable menstrual health solutions beyond donations.</p>
+      </div>
+    </div>
+
+    <!-- APPROACH -->
+    <div class="hw-pane" id="pane-approach">
+      <h2>Our Approach</h2>
+      <p>We address health and wellbeing holistically, understanding that a child who is unwell, afraid, or lacking basic dignity cannot learn. Our approach integrates health programming directly with our education initiatives, reaching children where they are.</p>
+      <div class="hw-callout">
+        <h4>Community-First Distribution</h4>
+        <p>Staff and volunteers deliver health resources directly into schools and communities, meeting children's immediate needs while building trust with families and local leaders.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Boy-Inclusive Conversations</h4>
+        <p>We include boys in menstrual health and reproductive education, helping to dismantle stigma from within communities and create more supportive environments for girls.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Integrated Awareness & Action</h4>
+        <p>Our interventions pair direct service delivery with advocacy and national conversation, ensuring that health challenges faced by marginalised children are visible, understood, and acted upon.</p>
+      </div>
+      <div class="hw-callout">
+        <h4>Strategic Partnerships</h4>
+        <p>We work with Love Land Foundation, Benchmark Marketing, Ezer International, and other partners to extend our reach and deepen the impact of every health intervention.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section class="hw-news">
+  <div class="hw-news-inner">
+    <div class="hw-news-label">Latest from Health & Wellbeing</div>
+    <div class="hw-news-grid">
+      <div class="hw-news-card">
+        <img src="/img/DSC03825.jpg" alt="" />
+        <div class="hw-news-card-body">
+          <div class="hw-news-date">May 20, 2025</div>
+          <h3>Beyond The Pad, A National Conversation on Period Poverty and Sustainable Menstrual Health</h3>
+        </div>
+      </div>
+      <div class="hw-news-card">
+        <img src="/img/DSC00380.jpg" alt="" />
+        <div class="hw-news-card-body">
+          <div class="hw-news-date">July 11, 2025</div>
+          <h3>Empower Her & PAD The Girl, Reaching Girls in Awutu Bereku, Central Region</h3>
+        </div>
+      </div>
+      <div class="hw-news-card">
+        <img src="/img/IMG_0170.jpg" alt="" />
+        <div class="hw-news-card-body">
+          <div class="hw-news-date">January 29, 2025</div>
+          <h3>PAD The Girl Child Campaign Reaches Kunkwa JHS, North East Region</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<my-footer></my-footer>
+<script>
+  function hwShow(id){document.querySelectorAll('.hw-pane').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+  function hwNavActive(el){document.querySelectorAll('.hw-nav-item').forEach(n=>n.classList.remove('active'));el.classList.add('active');}
+</script>
+</body>
+</html>

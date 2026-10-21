@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library | Spursbase Foundation</title>
+  <meta name="description" content="Browse Spursbase Foundation programmes, reports, stories and resources." />
+  <link rel="stylesheet" href="/css/css/base.css" />
+  <link rel="stylesheet" href="/css/css/header.css" />
+  <link rel="stylesheet" href="/css/css/footer.css" />
+  <link rel="stylesheet" href="/css/css/library.css?v=20261019" />
+</head>
+<body>
+  <script type="module" src="/js/main.js"></script>
+  <my-header></my-header>
+  <main id="main-content" class="library-static">
+    <section class="library-static-hero">
+      <img src="/img/DSC03825.jpg" alt="Spursbase Foundation community members learning together" />
+      <div class="library-static-shade"></div>
+      <div class="library-static-hero-copy">
+        <h1>The Library</h1>
+        <p>Programmes, evidence and stories from the communities we work alongside.</p>
+      </div>
+    </section>
+    <section class="library-static-content" data-library-browser>
+      <header class="library-static-heading">
+        <div>
+          <span>Explore our work</span>
+          <h2>Ideas and action, gathered in one place.</h2>
+        </div>
+        <label class="library-static-search">
+          <span class="sr-only">Search library resources</span>
+          <input type="search" placeholder="Search programmes, reports and stories" data-library-search />
+        </label>
+      </header>
+      <div class="library-static-filters" role="group" aria-label="Filter library resources">
+        <button type="button" data-library-filter="all" aria-pressed="true">All resources</button>
+        <button type="button" data-library-filter="programmes" aria-pressed="false">Programmes</button>
+        <button type="button" data-library-filter="reports" aria-pressed="false">Reports</button>
+        <button type="button" data-library-filter="stories" aria-pressed="false">Stories</button>
+      </div>
+      <p class="library-static-count" data-library-count aria-live="polite"></p>
+      <div class="library-static-grid">
+        <a class="library-static-card" data-library-category="programmes" href="/pages/programs.html">
+          <img src="/img/DSC05264.jpg" alt="Children participating in a community programme" />
+          <span>Programmes</span><h3>Our Programmes</h3><p>Explore the connected work supporting children to learn, thrive and grow.</p>
+        </a>
+        <a class="library-static-card" data-library-category="reports" href="/pages/annual-reports.html">
+          <img src="/img/DSC03825.jpg" alt="Students learning together" />
+          <span>Reports</span><h3>Annual Reports</h3><p>Read about our work, learning and progress with communities.</p>
+        </a>
+        <a class="library-static-card" data-library-category="programmes" href="/pages/education.html">
+          <img src="/img/DSC03298.jpg" alt="Education support in a classroom" />
+          <span>Programmes</span><h3>Education</h3><p>Learning support, literacy and educational opportunity.</p>
+        </a>
+        <a class="library-static-card" data-library-category="programmes" href="/pages/health.html">
+          <img src="/img/DSC00380.jpg" alt="Children taking part in a wellbeing activity" />
+          <span>Programmes</span><h3>Health &amp; Wellbeing</h3><p>Support for children’s health, dignity and ability to learn.</p>
+        </a>
+        <a class="library-static-card" data-library-category="stories" href="/pages/blog.html">
+          <img src="/img/Web.jpg" alt="Spursbase Foundation community event" />
+          <span>Stories</span><h3>News &amp; Stories</h3><p>Updates and stories from our programmes and communities.</p>
+        </a>
+        <a class="library-static-card" data-library-category="programmes" href="/pages/innovation.html">
+          <img src="/img/Website card.jpg" alt="Young people exploring a practical learning activity" />
+          <span>Programmes</span><h3>Innovation &amp; Technology</h3><p>Practical learning that connects creativity with local challenges.</p>
+        </a>
+      </div>
+      <p class="library-static-empty" data-library-empty hidden>No resources match your search. Try another term or category.</p>
+    </section>
+  </main>
+  <my-footer></my-footer>
+</body>
+</html>

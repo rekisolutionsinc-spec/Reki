@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Content Desk | Spursbase Foundation</title>
+  <link rel="stylesheet" href="/legacy-assets/css/blog.css" />
+  <link rel="icon" href="/img/favicon.png" />
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; padding: 28px 20px; background: var(--bl-light, #f5f6fa); color: var(--bl-text, #1c1c2e); font-family: Arial, Helvetica, sans-serif; }
+    .admin-container { max-width: 800px; margin: 28px auto; padding: clamp(24px, 5vw, 40px); background: #fff; border: 1px solid var(--bl-border, #e4e4ef); box-shadow: 0 8px 32px rgb(43 43 136 / 10%); }
+    .admin-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 30px; border-bottom: 1px solid var(--bl-border, #e4e4ef); padding-bottom: 22px; }
+    .blog-section-label { display: block; color: var(--bl-orange, #e9572b); font-size: .7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .admin-header h1 { margin: 7px 0 0; color: var(--bl-text, #1c1c2e); font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.15; }
+    .admin-header p { margin: 8px 0 0; color: var(--bl-muted, #5a5a72); font-size: .9rem; }
+    .read-more-btn { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; min-height: 42px; margin: 0; border: 1px solid var(--bl-blue, #2b2b88); padding: 0 15px; background: transparent; color: var(--bl-blue, #2b2b88); font-size: .85rem; font-weight: 700; text-decoration: none; }
+    .read-more-btn:hover { background: var(--bl-blue, #2b2b88); color: #fff; }
+    .form-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .form-row > .form-group { flex: 1 1 240px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 19px; }
+    label { color: var(--bl-muted, #5a5a72); font-size: .72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    input[type="text"], input[type="password"], select, textarea { width: 100%; min-height: 46px; border: 1px solid var(--bl-border, #e4e4ef); border-radius: 4px; padding: 11px 12px; background: #fff; color: var(--bl-text, #1c1c2e); font: inherit; font-size: .95rem; }
+    textarea { min-height: 110px; resize: vertical; line-height: 1.55; }
+    #body { min-height: 220px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86rem; }
+    input:focus-visible, select:focus-visible, textarea:focus-visible { border-color: var(--bl-orange, #ff6633); outline: 3px solid rgb(255 102 51 / 22%); outline-offset: 1px; }
+    .field-help { margin: 0; color: var(--bl-muted, #5a5a72); font-size: .78rem; line-height: 1.5; }
+    .submit-button { display: flex; width: 100%; min-height: 50px; align-items: center; justify-content: center; margin-top: 6px; border: 0; padding: 12px 18px; background: var(--bl-orange, #ff6633); color: #fff; font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer; }
+    .submit-button:hover { background: #e05520; }
+    .submit-button:disabled { opacity: .65; cursor: wait; }
+    .admin-status { min-height: 24px; margin: 14px 0 0; color: var(--bl-muted, #5a5a72); font-size: .9rem; line-height: 1.5; }
+    .admin-status[data-state="success"] { color: #187342; }
+    .admin-status[data-state="error"] { color: #a82d26; }
+    @media (max-width: 560px) {
+      body { padding: 12px; }
+      .admin-container { margin: 12px auto; padding: 22px 18px; }
+      .admin-header { align-items: flex-start; flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="admin-container">
+    <header class="admin-header">
+      <div>
+        <span class="blog-section-label">Foundation Data Controls</span>
+        <h1>Upload Content Desk</h1>
+        <p>Publish a story to the Spursbase blog and local content archive.</p>
+      </div>
+      <a href="/blog" class="read-more-btn">View live feed</a>
+    </header>
+
+    <form id="uploadForm">
+      <div class="form-group">
+        <label for="adminToken">Publishing access token</label>
+        <input type="password" id="adminToken" autocomplete="current-password" required />
+        <p class="field-help">Ask your site administrator for the publishing token. It is sent securely with this submission and is not saved in this page.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="title">Article title</label>
+          <input type="text" id="title" maxlength="120" required placeholder="e.g., Vacation Classes Expansion" />
+        </div>
+        <div class="form-group">
+          <label for="type">Category type</label>
+          <select id="type" required>
+            <option value="blog">Blog story</option>
+            <option value="news">News flash</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="program">Programme</label>
+          <select id="program" required>
+            <option value="education">Education</option>
+            <option value="health-wellbeing">Health &amp; Wellbeing</option>
+            <option value="community-development">Community Development</option>
+            <option value="policy-advocacy">Policy &amp; Advocacy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="focusArea">Focus area</label>
+          <select id="focusArea" required>
+            <option value="education-access">Education access</option>
+            <option value="literacy">Literacy</option>
+            <option value="girls-education">Girls' education</option>
+            <option value="girls-in-stem">Girls in STEM</option>
+            <option value="menstrual-health">Menstrual health</option>
+            <option value="health-awareness">Health awareness</option>
+            <option value="community-engagement">Community engagement</option>
+            <option value="youth-skills">Youth skills</option>
+            <option value="child-wellbeing">Child wellbeing</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Cover image URL</label>
+        <input type="text" id="image" maxlength="2048" required placeholder="/img/your-image.jpg or https://..." />
+        <p class="field-help">Use a root-absolute local image path such as /img/photo.jpg or a secure HTTPS image address.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="excerpt">Brief listing excerpt</label>
+        <textarea id="excerpt" rows="3" maxlength="240" required placeholder="Summarize the story in one or two clear sentences."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="body">Article content (HTML)</label>
+        <textarea id="body" rows="9" required placeholder="<p>Write your story here.</p>&#10;<h2>A meaningful moment</h2>&#10;<p>Add detail and context...</p>"></textarea>
+        <p class="field-help">Supported formatting: paragraphs, headings, lists, quotes, links, and images. Unsafe markup is removed before saving.</p>
+      </div>
+
+      <button class="submit-button" id="submitButton" type="submit">Publish story</button>
+      <p class="admin-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("uploadForm");
+    const submitButton = document.getElementById("submitButton");
+    const formStatus = document.getElementById("formStatus");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const payload = {
+        title: document.getElementById("title").value.trim(),
+        type: document.getElementById("type").value,
+        program: document.getElementById("program").value,
+        focusArea: document.getElementById("focusArea").value,
+        image: document.getElementById("image").value.trim(),
+        excerpt: document.getElementById("excerpt").value.trim(),
+        body: document.getElementById("body").value.trim()
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Publishing…";
+      formStatus.textContent = "Saving your story…";
+      formStatus.dataset.state = "";
+
+      try {
+        const response = await fetch("/api/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Admin-Token": document.getElementById("adminToken").value
+          },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || "The server could not publish this story.");
+
+        form.reset();
+        formStatus.dataset.state = "success";
+        formStatus.textContent = `Story published. Open /blog/${result.post.slug} to view it.`;
+      } catch (error) {
+        formStatus.dataset.state = "error";
+        formStatus.textContent = error instanceof Error
+          ? error.message
+          : "Could not connect to the publishing service. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Publish story";
+      }
+    });
+  </script>
+</body>
+</html>
