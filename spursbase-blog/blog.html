@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spursbase Foundation - Blog &amp; Stories</title>
+  <meta name="description" content="Stories, news and updates from Spursbase Foundation: inspiring change, celebrating resilience." />
+  <link rel="stylesheet" href="../css/css/base.css" />
+  <link rel="stylesheet" href="../css/css/header.css" />
+  <link rel="stylesheet" href="../css/css/footer.css" />
+  <link rel="stylesheet" href="../css/css/blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="/img/favicon.png" rel="icon" />
+</head>
+<body>
+<script type="module" src="/js/main.js"></script>
+<my-header></my-header>
+
+<main id="main-content">
+  <section class="blog-hero" style="background-image:url('/img/IMG_0093.jpg')" aria-labelledby="blog-title">
+    <div class="blog-hero-overlay">
+      <h1 id="blog-title">Our Blog &amp; Stories</h1>
+      <p>Inspiring change, celebrating resilience one story at a time.</p>
+    </div>
+  </section>
+
+  <section class="blog-filters" aria-label="Filter posts">
+    <div class="blog-filters-inner">
+      <div class="type-chips" id="type-chips" role="group" aria-label="Post type"></div>
+      <label class="filter-field"><span class="sr-only" style="position:absolute;left:-9999px">Topic</span>
+        <select id="topic" aria-label="Topic"><option value="">All topics</option></select>
+      </label>
+      <label class="filter-field"><span class="sr-only" style="position:absolute;left:-9999px">Search</span>
+        <input id="q" type="search" placeholder="Search posts" aria-label="Search posts" />
+      </label>
+    </div>
+  </section>
+
+  <section class="featured-blog" id="featured" hidden aria-label="Featured post"></section>
+
+  <section class="blog-grid-section" aria-labelledby="latest-title">
+    <div class="blog-wrap">
+      <div class="blog-grid-head">
+        <h2 id="latest-title">Latest posts</h2>
+        <p class="blog-count" id="blog-count" aria-live="polite"></p>
+      </div>
+      <div class="blog-grid" id="blog-grid"><p class="blog-count">Loading posts…</p></div>
+    </div>
+  </section>
+</main>
+
+<my-footer></my-footer>
+<script src="/js/blog.js"></script>
+</body>
+</html>
